@@ -1,1 +1,1 @@
-# easypay-odoo-addons
+# Easypay Addons for Odoo ERP System
