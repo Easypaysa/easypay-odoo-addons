@@ -1,0 +1,330 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* easypay_pos
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-16 04:01+0000\n"
+"PO-Revision-Date: 2023-08-16 07:06+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#, fuzzy, python-format
+msgid ""
+"%s\n"
+" %s"
+msgstr ""
+"%s\n"
+" %s"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__amount_authorized
+#, fuzzy
+msgid "Amount Authorized"
+msgstr "المبلغ المصرح به"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__approval_code
+#, fuzzy
+msgid "Approval Code"
+msgstr "رمز الموافقه"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Cancel Payment Request"
+msgstr "إلغاء طلب الدفع"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#, python-format
+msgid "Cannot process transactions with negative amount."
+msgstr "لا يمكن معالجة المعاملات ذات المبلغ 0."
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__card_name
+msgid "Card Name"
+msgstr "رقم البطاقة"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
+#, python-format
+msgid "Connect"
+msgstr "اتصال"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#, fuzzy, python-format
+msgid "Device error"
+msgstr "خطأ في الجهاز"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/js/Chrome.js:0
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#, fuzzy, python-format
+msgid "Device not connected"
+msgstr "الجهاز غير متصل"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
+#, python-format
+msgid "Disconnect"
+msgstr "قطع الاتصال"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
+#, python-format
+msgid "Easypay"
+msgstr ""
+
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment_method__easypay_teminalid
+msgid "Easypay Teminalid"
+msgstr ""
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__easypay_terminalid
+#, fuzzy
+msgid "Easypay Terminalid"
+msgstr "Easypay Terminalid"
+
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Force Done"
+msgstr " تم يدوي"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Force done"
+msgstr " تم يدوي"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
+#, python-format
+msgid "Ip Address"
+msgstr "عنوان Ip"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
+#, python-format
+msgid "Ip:"
+msgstr "عنوان Ip"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__merchant
+#, fuzzy
+msgid "Merchant"
+msgstr "تاجر"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__pan
+msgid "Pan"
+msgstr "Pan"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__payment_log
+msgid "Payment Log"
+msgstr "سجل الدفع"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Payment Successful"
+msgstr "تم الدفع بنجاح"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Payment request pending"
+msgstr "طلب الدفع متوقف"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Payment reversed"
+msgstr "ارجاع"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
+#, python-format
+msgid ""
+"Please enter the information you are getting from Easypay to "
+"connect with the device"
+msgstr ""
+"الرجاء إدخال المعلومات التي تحصل عليها من تطبيق Easypay للاتصال بالجهاز"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/js/Chrome.js:0
+#, python-format
+msgid "Please wait a second we trying to connote the device"
+msgstr "من فضلك انتظر ثانية نحاول أن نتصل بالجهاز"
+
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
+#, python-format
+msgid "Port"
+msgstr "منفذ"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
+#, python-format
+msgid "Port:"
+msgstr "المنفذ:"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Print"
+msgstr "طباعة"
+
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Request sent"
+msgstr "تم ارسال الطلب"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__retrieval_reference_number
+#, fuzzy
+msgid "Retrieval Reference Number"
+msgstr "الرقم المرجعي للاسترجاع"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Retry"
+msgstr "إعادة المحاولة"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Reversal request sent to terminal"
+msgstr "تم إرسال طلب الإلغاء إلى الطرفية"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Reverse"
+msgstr "عكسي"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Reverse Payment"
+msgstr "الدفع العكسي"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Send"
+msgstr "إرسال"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Send Payment Request"
+msgstr "إرسال طلب الدفع"
+
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Transaction cancelled"
+msgstr "المعاملة ملغاة"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Waiting for card"
+msgstr "في انتظار البطاقة"
+
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#, fuzzy, python-format
+msgid "make sure the device connected and can be reached"
+msgstr "تأكد من توصيل الجهاز ويمكن الوصول إليه"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/js/Chrome.js:0
+#, fuzzy, python-format
+msgid "make sure the device connected and can be reached %s"
+msgstr "تأكد من توصيل الجهاز وإمكانية الوصول إليه %s"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/js/Chrome.js:0
+#, fuzzy, python-format
+msgid "make sure the device connected and can be reached at %s"
+msgstr "تأكد من توصيل الجهاز وأنه يمكن الوصول إليه على %s"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#, python-format
+msgid "ok"
+msgstr "موافق"
+
+#. module: easypay_pos
+#. openerp-web
+#: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
+#, python-format
+msgid "powered by"
+msgstr "تم بواسطة"

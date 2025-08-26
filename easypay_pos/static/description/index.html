@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=sans_serif' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {
+            --font-sans-serif: "Inter", sans-serif;
+            font-family: var(--font-sans-serif);
+            color: #111827;
+            font-size: 1.5rem;
+            text-align: center;
+            /*max-width: 960px;*/
+        }
+
+.x_wd_yellow_highlight_04 {
+    background-image: url("yellow_highlight_04.svg");
+    background-position: bottom;
+            background-repeat: no-repeat;
+            background-size: contain;
+            white-space: nowrap;}
+
+        .x_wd_yellow_highlight_bold_05 {
+            background-image: url('yellow_highlight_bold_05.svg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            white-space: nowrap;
+        }
+
+        .strong {
+            font-weight: 600;
+            .x_wd_display_fireworks_02::before {
+                content: url(fireworks_02.svg);
+                position: absolute;
+                top: auto;
+                left: auto;
+                bottom: -20px;
+                right: 100%;
+                transform: scaleX(-1)
+            }
+
+            .text-o-color-2 {
+                color: #017e84 !important;
+            }
+
+            .s_wd_features {
+                border-top-right-radius: 15rem;
+                border-bottom-left-radius: 15rem;
+            }
+
+            .bg-200, .o-discuss-ChannelMember.cursor-pointer:hover {
+                background-color: #F3F4F6 !important;
+                color: #111827;
+            }
+
+            .py-lg-7 {
+                padding-top: 6rem !important;
+                padding-bottom: 6rem !important;
+            }
+
+            .py-5 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+
+
+            a {
+                color: #017e84;
+                text-decoration: none;
+            }
+
+            .btn {
+                display: inline-block;
+                font-weight: 600;
+                line-height: 1.5;
+                color: #374151;
+                text-align: center;
+                vertical-align: middle;
+                cursor: pointer;
+                user-select: none;
+                background-color: transparent;
+                border: 1px solid transparent;
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+                border-radius: 0.25rem;
+                transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+
+
+            .btn-lg, .btn-group-lg > .btn {
+                padding: 1rem 2rem;
+                font-size: 1.3rem;
+                border-radius: 0.25rem;
+            }
+
+            .mb-3 {
+                margin-bottom: 1rem !important;
+            }
+
+            .btn-fill-primary, .btn-primary {
+                color: #FFFFFF;
+                background-color: #34969b;
+                border-color: #34969b;
+            }
+        }
+
+        .x_wd_display_circle {
+            background-image: url('/easypay_pos/static/description/circle.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: left center;
+        }
+
+        .x_wd_blue_highlight_bold_03 {
+            background-image: url(blue_highlight_bold_03.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            white-space: nowrap;
+        }
+
+        .x_wd_blue_highlight_01 {
+            background-image: url(blue_highlight_01.svg);
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            white-space: nowrap;
+        }
+
+        .display-1 {
+            font-size: calc(1.725rem + 5.7vw);
+        }
+
+        .display-2 {
+            font-size: calc(1.525rem + 3.3vw);
+        }
+
+        .display-3 {
+            font-size: calc(1.525rem + 3.3vw);
+        }
+
+        .o_we_shape.o_illustration_doodle_03 {
+            background-image: url(03.svg);
+            background-position: top center;
+            background-size: 100% auto;
+            background-repeat: no-repeat no-repeat;
+        }
+
+        .o_we_shape {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute !important;
+            display: block;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            margin-top: 70px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .circle_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .background_circle {
+            width: 270px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F3F4F6;
+            border-radius: 50%;
+        }
+
+        .background_circle_2 {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F3F4F6;
+            border-radius: 30%;
+        }
+
+        .background_circle_img {
+            height: 300px;
+        }
+
+        .background_circle_3 {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .background_circle_img_3 {
+            height: 230px;
+        }
+
+        .country-status {
+            max-width: 1240px;
+            margin: 60px auto;
+            display: block;
+        }
+
+        .country-seaction {
+            min-height: 90px;
+            border: 1px solid rgba(0, 0, 0, .1);
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 10px;
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .image-15 {
+            width: 100px;
+            height: 80px;
+            display: inline-block;
+        }
+
+        .text-country {
+            flex-direction: column;
+            display: flex;
+            text-align: left;
+        }
+
+        .location-case {
+            max-width: 150px;
+            background-color: rgba(81, 103, 246, .1);
+            border-radius: 19px;
+            align-items: center;
+            margin-bottom: 5px;
+            margin-right: 10px;
+            padding: 5px 10px;
+            display: flex;
+        }
+
+        .circle-color.green {
+            background-color: #2ea536;
+        }
+
+        .circle-color {
+
+            width: 12px;
+            height: 12px;
+            background-color: #5167f6;
+            border-radius: 20px;
+            margin-right: 5px;
+        }
+
+        .country-status-color.green {
+            color: #2ea536;
+        }
+
+        .country-status-color {
+            color: #5167f6;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .county-name {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 18px;
+        }
+
+        .contury-logo-box {
+            width: 70px;
+            height: 70px;
+            background-image: url(Jordan.png);
+            background-position: 0 0;
+            background-size: cover;
+            border-radius: 500px;
+            margin-left: 5px;
+            margin-right: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contury-logo-box.usa {
+            background-image: url(6521768779725e7b77a1270a_2880px-Flag_of_the_United_States.svg.png);
+        }
+
+        .payment_type {
+            height: 90px;
+            border-left: 1px solid rgba(0, 0, 0, .1);
+            display: flex;
+            width: 100px;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .payment_type_img {
+            width: 70px;
+            display: flex;
+            flex-direction: column;
+            height: 50%;
+            justify-content: center;
+        }
+
+
+        .text-success {
+            color: #28a745 !important;
+        }
+
+        .fa {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .location-case.case-progress {
+            max-width: 112px;
+            color: #dd861b;
+            background-color: rgba(221, 134, 27, .1);
+        }
+
+        .circle-color.orange {
+            background-color: #dd861b;
+        }
+
+        .country-status-color.orange {
+            color: #dd861b;
+        }
+
+        .location-case.case-planned {
+            max-width: 100px;
+        }
+
+        .mb-n5 {
+            margin-bottom: -3rem !important;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        .img-thumbnail {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        }
+
+        .img-thumbnail {
+            padding: 0.75rem;
+            background-color: #ffffff;
+            border: 0 solid #dee2e6;
+            border-radius: 0.625rem;
+            max-width: 100%;
+            /*height: auto;*/
+        }
+
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        .x_wd_display_fireworks_01 {
+            position: relative;
+            font-size: 4rem;
+        }
+.x_wd_display_fireworks_01::after {
+            content: url(fireworks_02.svg);
+            position: absolute;
+            top: auto;
+            left: 100%;
+            bottom: -20px;
+            right: auto;
+        }
+
+        .div_fireworks{
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .fireworks_img{
+            position: absolute;
+            top: auto;
+            left: 85%;
+            bottom: auto;
+            right: auto;
+        }
+
+        .x_wd_display_fireworks_02 {
+            position: relative;
+            font-size: 4rem;
+        }
+
+    </style>
+</head>
+<body style="--font-sans-serif: 'Inter', sans-serif;
+            font-family: 'Inter', 'Odoo Unicode Support Noto', sans-serif;;
+            color: #111827;
+            font-size: 1.5rem;
+            text-align: center;">
+<!--<link href="index.css" type="text/css" rel="stylesheet">-->
+<section class="oe_container d-flex justify-content-center" style="display: flex !important;">
+    <div style="display: flex !important;width:100%; background-color:#FFFFFF; margin-top:20px;box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;">
+        <div class=""
+             style="justify-content: flex-start;align-items: center; width:40%; margin-bottom:12px;text-align: left;">
+            <img src="easypay_icon.png" style="width:70%;">
+        </div>
+        <div class="panel-heading mb0 mt0 collapsed" role="tab" data-toggle="collapse" data-parent="#priceAccordeon"
+             data-target="#priceAccordeon_area" aria-expanded="false"
+             style="margin-left:0;padding:0 0 2px 0;text-align:right;font-size: 20px;width: 60%;justify-content: flex-end;align-items: center;margin-bottom: 12px;">
+            <div>
+                <div style="background-color:#34969b; color:white; padding:5px; margin-bottom:3px; text-align:center; border-radius:5px; white-space:nowrap; display:inline-block">
+                    <div style="color:white">
+                        Supported :
+                    </div>
+                </div>
+                <div style="background-color:#34969b; color:white; padding:5px; margin-bottom:3px; text-align:center; border-radius:5px; white-space:nowrap; display:inline-block">
+                    <div style="color:white" title="The tool is compatible with the Odoo Enterprise version">
+                        <i class="fa fa-check" style="margin-left:4px"> </i>
+                        Enterprise
+                    </div>
+                </div>
+                <div style="background-color:#34969b; padding:5px; margin-top:3px; text-align:center; border-radius:5px; white-space:nowrap; display:inline-block">
+                    <div style="color:white" title="The tool is compatible with the Odoo Community version">
+                        <i class="fa fa-check" style="margin-left:4px"> </i>
+                        Community
+                    </div>
+                </div>
+                <div style="background-color:#34969b; color:white; padding:5px; margin-bottom:3px; text-align:center; border-radius:5px; white-space:nowrap; display:inline-block">
+                    <div style="color:white"
+                         title="The tool might be installed to Odoo.sh if you have a linked private git repository">
+                        <i class="fa fa-check" style="margin-left:4px"> </i>
+                        Odoo.sh
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="oe_container" style="text-align: center;">
+<!--    <div class="oe_spaced">-->
+<!--        <h1 class="display-1" style="-->
+<!--        font-size: calc(1.725rem + 5.7vw);-->
+<!--    margin-top: 50px;-->
+<!--    font-family: 'Caveat';-->
+<!--    line-height: 0.9;-->
+<!--    font-weight: 700;">Easypay <span class="x_wd_display_circle" style="background-image: url('https://easyerps.com/web/image/1365-c6682bfc/circle.svg');-->
+<!--            background-repeat: no-repeat;-->
+<!--            background-size: contain;-->
+<!--            background-position: left center;">Tap </span><span-->
+<!--                style="visibility: hidden; font-size: 0px">.</span>to pay !</h1>-->
+<!--        <h2 class="display-3" style="-->
+<!--        font-size: calc(1.525rem + 3.3vw);-->
+<!--    font-family: 'Caveat';-->
+<!--    line-height: 3;-->
+<!--    font-weight: 700;">Smart Payment <span class="x_wd_blue_highlight_bold_03" style="background-image: url(/easypay_pos/static/description/blue_highlight_bold_03.svg);-->
+<!--            background-position: center center;-->
+<!--            background-repeat: no-repeat;-->
+<!--            background-size: contain;-->
+<!--            white-space: nowrap;">So Easy</span></h2>-->
+<!--        <h2 class="display-3" style="-->
+<!--        font-size: calc(1.525rem + 3.3vw);-->
+<!--    font-family: 'Caveat';-->
+<!--    line-height: 1;-->
+<!--    font-weight: 700;">حل مبتكر <span class="x_wd_blue_highlight_bold_03" style="background-image: url(/easypay_pos/static/description/blue_highlight_bold_03.svg);-->
+<!--            background-position: center center;-->
+<!--            background-repeat: no-repeat;-->
+<!--            background-size: contain;-->
+<!--            white-space: nowrap;">لدفع ذكي وسهل للغاية</span></h2>-->
+
+<!--    </div>-->
+
+    <div class="mt16 mb16" style="text-align: center;">
+            <img src="main_screenshot_1.png" class="img img-responsive center-block" style="width: 100%;">
+        </div>
+
+    <div class="mt16 mb16" style="text-align: center;">
+            <img src="easypaymain.png" class="img img-responsive center-block" style="width: 70%;">
+        </div>
+
+<!--    <div class="container" style="width: 100%;-->
+<!--            margin-top: 70px;-->
+<!--            margin-right: auto;-->
+<!--            margin-left: auto;">-->
+<!--        <a class="btn btn-lg btn-primary mb-3"-->
+<!--           style="display: inline-block;-->
+<!--            font-weight: 600;-->
+<!--            line-height: 1.5;-->
+<!--            color: #374151;-->
+<!--            text-align: center;-->
+<!--            vertical-align: middle;-->
+<!--            cursor: pointer;-->
+<!--            user-select: none;-->
+<!--            background-color: transparent;-->
+<!--            border: 1px solid transparent;-->
+<!--            padding: 0.75rem 1.5rem;-->
+<!--            font-size: 1rem;-->
+<!--            border-radius: 0.25rem;-->
+<!--            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;-->
+<!--            padding: 1rem 2rem;-->
+<!--            font-size: 20px;-->
+<!--            border-radius: 0.25rem;-->
+<!--            color: #FFFFFF;-->
+<!--            background-color: #34969b;-->
+<!--            border-color: #34969b;-->
+<!--            margin-bottom: 1rem !important;" href="https://easyerps.com/-1">Start now - اطلبه الان</a>-->
+<!--    </div>-->
+</section>
+<section style="text-align: center;position: relative;padding-top: 1.5rem !important;background-color: #F3F4F6 !important;
+    color: #111827;" data-oe-shape-data="{'shape':'illustration/doodle/03'}">
+    <div class="o_we_shape o_illustration_doodle_03" style="background-image: url(/easypay_pos/static/description/03.svg);
+            background-position: top center;
+            background-size: 100% auto;
+            background-repeat: no-repeat no-repeat;"></div>
+    <div class="container" style="width: 100%;
+            margin-right: auto;
+            margin-left: auto;">
+        <p style="font-size: 2rem;"><strong>Easypay is a SoftPOS app</strong>
+            which is a revolutionary new technology that allows merchants to accept card payments directly on their phone or NFC-supported devices without the need of any additional hardware.</p>
+        <p style="font-size: 2rem;direction: rtl;"><strong>ايزي باي هوحل مبتكر في مجال المدفوعات</strong> يمكن التجار بقبول مدفوعات البطاقة مباشرة على هواتفهم أو أجهزتهم التي تدعم تقنية NFC دون الحاجة إلى أي أجهزة إضافية. </p>
+        <!--        <h2 class="oe_slogan">All you need is a smartphone or tablet then you are all set</h2>-->
+        <!--        <h2 class="oe_slogan">ايزي باي تطبيق يحول جهازك الى نقطة دفع، كل ماتحتاجه هو جهاز واحد فقط </h2>-->
+<!--        <div class="mt16 mb16" style="text-align: center;">-->
+<!--            <img src="easypaymain.png" class="img img-responsive center-block" style="width: 70%;">-->
+<!--        </div>-->
+
+<!--        <div class="pb-1">-->
+<!--                              &lt;!&ndash; <video src="1.mp4" loop="" muted="" autoplay="" style="width: 100%;"></video> &ndash;&gt;-->
+<!--                              <video style="max-width:90%" controls="">-->
+<!--                                 <source src="C0088_1.mp4" type="video/mp4">-->
+<!--                              </video>-->
+<!--                              <br><br>-->
+<!--                           </div>-->
+
+        <div class="mb-n5" style="padding-bottom: 70px;margin-bottom: -3rem !important;">
+            <a target="_blank" href="https://youtu.be/cFKai6bQq-U">
+                                <img class="img-fluid" src="easypaySwan.png" style="padding: 0.75rem;
+            background-color: #ffffff;
+            border: 0 solid #dee2e6;
+            border-radius: 0.625rem;
+            max-width: 100%;width:800px ;height:auto">
+                            </a>
+<!--            <iframe class="img-thumbnail" style="box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);" width="800" height="500"-->
+<!--                    src="https://www.youtube.com/embed/cFKai6bQq-U?si=SE68aQPIrWoDUbVq"-->
+<!--                    title="YouTube video player" frameborder="0"-->
+<!--                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"-->
+<!--                    allowfullscreen></iframe>-->
+
+        </div>
+
+        <div class="mt16 mb16" style="text-align: center;">
+            <img src="img.png" class="img img-responsive center-block" style="width: 80%;">
+        </div>
+
+<!--        <div class="country-status" style="max-width: 1240px;-->
+<!--            margin: 60px auto;-->
+<!--            display: block;">-->
+<!--            <div class="country-seaction" style="min-height: 90px;-->
+<!--            border: 1px solid rgba(0, 0, 0, .1);-->
+<!--            justify-content: flex-start;-->
+<!--            align-items: center;-->
+<!--            padding-left: 10px;-->
+<!--            display: flex;-->
+<!--            margin-top: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            flex-wrap: wrap;">-->
+<!--                <img src="https://assets.website-files.com/61497c015f722323e5fb623a/63b17ae685d8d8e071389ac5_Saudi-arabia.svg"-->
+<!--                     loading="lazy" alt="" class="image-15" style="width: 100px;height: 80px;display: inline-block;">-->
+<!--                <div class="text-country" style="text-align: left;">-->
+<!--                    <div class="location-case case-live" style="max-width: 150px;-->
+<!--            background-color: rgba(81, 103, 246, .1);-->
+<!--            border-radius: 19px;-->
+<!--            align-items: center;-->
+<!--            margin-bottom: 5px;-->
+<!--            margin-right: 10px;-->
+<!--            padding: 5px 10px;-->
+<!--            display: flex;">-->
+<!--                        <div class="circle-color green" style="width: 12px;-->
+<!--            height: 12px;-->
+<!--            background-color: #5167f6;-->
+<!--            border-radius: 20px;-->
+<!--            margin-right: 5px;background-color: #2ea536;"></div>-->
+<!--                        <div class="country-status-color green" style="color: #5167f6;-->
+<!--            font-weight: 500;-->
+<!--            font-size: 14px;color: #2ea536;">Live-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <h3 class="county-name" style="margin-top: 0;-->
+<!--            margin-bottom: 0;-->
+<!--            font-size: 18px;">Saudi arabia</h3>-->
+<!--                </div>-->
+<!--                <div class="payment_type"-->
+<!--                     style="margin-left: 20px;height: 90px;-->
+<!--                    border-left: 1px solid rgba(0, 0, 0, .1);-->
+<!--                    width: 100px;-->
+<!--                    flex-direction: column;-->
+<!--                    justify-content: space-around;-->
+<!--                    align-items: center;">-->
+<!--                    <div class="payment_type_img"-->
+<!--                         style="width: 100%;-->
+<!--                        display: flex;-->
+<!--                        flex-direction: column;-->
+<!--                        height: 50%;-->
+<!--                        justify-content: center;">-->
+<!--                        <img style="width: 100%;"-->
+<!--                                src="Mada.png"-->
+<!--                                loading="lazy" alt="">-->
+<!--                    </div>-->
+<!--                    <div style="">-->
+<!--                        <i class="mr-2 fa fa-check fa-2x text-success" aria-hidden="true"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="payment_type"-->
+<!--                     style="margin-left: 20px;height: 90px;-->
+<!--                    border-left: 1px solid rgba(0, 0, 0, .1);-->
+<!--                    width: 100px;-->
+<!--                    flex-direction: column;-->
+<!--                    justify-content: space-around;-->
+<!--                    align-items: center;">-->
+<!--                    <div class="payment_type_img"-->
+<!--                         style="width: 100%;-->
+<!--                        display: flex;-->
+<!--                        flex-direction: column;-->
+<!--                        height: 50%;-->
+<!--                        justify-content: center;">-->
+<!--                        <img style="width: 100%;"-->
+<!--                                src="Visa.png"-->
+<!--                                loading="lazy" alt="">-->
+<!--                    </div>-->
+<!--                    <div style="">-->
+<!--                        <i class="mr-2 fa fa-check fa-2x text-success" aria-hidden="true"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="payment_type"-->
+<!--                     style="margin-left: 20px;height: 90px;-->
+<!--                    border-left: 1px solid rgba(0, 0, 0, .1);-->
+
+<!--                    width: 100px;-->
+<!--                    flex-direction: column;-->
+<!--                    justify-content: space-around;-->
+<!--                    align-items: center;">-->
+<!--                    <div class="payment_type_img"-->
+<!--                         style="width: 100%;-->
+<!--                        display: flex;-->
+<!--                        flex-direction: column;-->
+<!--                        height: 50%;-->
+<!--                        justify-content: center;">-->
+<!--                        <img style="width: 100%;"-->
+<!--                                src="Mastercard.png"-->
+<!--                                loading="lazy" alt="">-->
+<!--                    </div>-->
+<!--                    <div style="">-->
+<!--                        <i class="mr-2 fa fa-check fa-2x text-success" aria-hidden="true"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="payment_type"-->
+<!--                     style="margin-left: 20px;height: 90px;-->
+<!--                    border-left: 1px solid rgba(0, 0, 0, .1);-->
+
+<!--                    width: 100px;-->
+<!--                    flex-direction: column;-->
+<!--                    justify-content: space-around;-->
+<!--                    align-items: center;">-->
+<!--                    <div class="payment_type_img"-->
+<!--                         style="width: 100%;-->
+<!--                        display: flex;-->
+<!--                        flex-direction: column;-->
+<!--                        height: 50%;-->
+<!--                        justify-content: center;">-->
+<!--                        <img style="width: 100%;"-->
+<!--                                src="AmericanExpress.png"-->
+<!--                                loading="lazy" alt="">-->
+<!--                    </div>-->
+<!--                    <div style="">-->
+<!--                        <i class="mr-2 fa fa-check fa-2x text-success" aria-hidden="true"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="payment_type"-->
+<!--                     style="margin-left: 20px;height: 90px;-->
+<!--                    border-left: 1px solid rgba(0, 0, 0, .1);-->
+
+<!--                    width: 100px;-->
+<!--                    flex-direction: column;-->
+<!--                    justify-content: space-around;-->
+<!--                    align-items: center;">-->
+<!--                    <div class="payment_type_img"-->
+<!--                         style="width: 100%;-->
+<!--                        display: flex;-->
+<!--                        flex-direction: column;-->
+<!--                        height: 50%;-->
+<!--                        justify-content: center;">-->
+<!--                        <img style="width: 100%;"-->
+<!--                                src="stcpay.png"-->
+<!--                                loading="lazy" alt="">-->
+<!--                    </div>-->
+<!--                    <div style="">-->
+<!--                        <i class="mr-2 fa fa-spinner fa-2x text-success" style="color:#5167f6 !important"-->
+<!--                           aria-hidden="true"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash;            <div class="country-seaction" style="min-height: 90px;-->
+<!--            border: 1px solid rgba(0, 0, 0, .1);-->
+<!--            justify-content: flex-start;-->
+<!--            align-items: center;-->
+<!--            padding-left: 10px;-->
+<!--            display: flex;-->
+<!--            margin-top: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            flex-wrap: wrap;"><img&ndash;&gt;-->
+<!--            &lt;!&ndash;                    src="https://assets.website-files.com/61497c015f722323e5fb623a/63bbf3bb9aef69652bc32362_kenya.svg"&ndash;&gt;-->
+<!--            &lt;!&ndash;                    loading="lazy" alt="" class="image-15" style="width: 100px;height: 80px;display: inline-block;">&ndash;&gt;-->
+<!--            &lt;!&ndash;                <div class="text-country" style="flex-direction: column;display: flex;text-align: left;">&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <div class="location-case case-live">&ndash;&gt;-->
+<!--            &lt;!&ndash;                        <div class="circle-color green"></div>&ndash;&gt;-->
+<!--            &lt;!&ndash;                        <div class="country-status-color green">Live</div>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <h3 class="county-name" style="margin-top: 0;margin-bottom: 0;font-size: 18px;">Kenya</h3></div>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--            <div class="country-seaction" style="min-height: 90px;-->
+<!--            border: 1px solid rgba(0, 0, 0, .1);-->
+<!--            justify-content: flex-start;-->
+<!--            align-items: center;-->
+<!--            padding-left: 10px;-->
+<!--            display: flex;-->
+<!--            margin-top: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            flex-wrap: wrap;">-->
+<!--                <img src="Jordan.png"-->
+<!--                     loading="lazy" alt="" class="image-15" style="width: 100px;height: 80px;display: inline-block;">-->
+<!--                <div class="text-country" style="text-align: left;flex-direction: column;">-->
+<!--                    <div class="location-case case-planned" style="max-width: 150px;-->
+<!--                    background-color: rgba(81, 103, 246, .1);-->
+<!--                    border-radius: 19px;-->
+<!--                    align-items: center;-->
+<!--                    margin-bottom: 5px;-->
+<!--                    margin-right: 10px;-->
+<!--                    padding: 5px 10px;-->
+<!--                    display: flex;-->
+<!--                    max-width: 100px;">-->
+<!--                        <div class="circle-color" ></div>-->
+<!--                        <div class="country-status-color" style="color: #5167f6;font-weight: 500;font-size: 14px;">Planned</div>-->
+<!--                    </div>-->
+<!--                    <h3 class="county-name" style="margin-top: 0;margin-bottom: 0;font-size: 18px;">Jordan</h3></div>-->
+<!--            </div>-->
+<!--            <div class="country-seaction" style="min-height: 90px;-->
+<!--            border: 1px solid rgba(0, 0, 0, .1);-->
+<!--            justify-content: flex-start;-->
+<!--            align-items: center;-->
+<!--            padding-left: 10px;-->
+<!--            display: flex;-->
+<!--            margin-top: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            flex-wrap: wrap;">-->
+<!--                <img src="6521768779725e7b77a1270a_2880px-Flag_of_the_United_States.svg.png"-->
+<!--                     loading="lazy" alt="" class="image-15" style="width: 100px;height: 80px;display: inline-block;">-->
+<!--                <div class="text-country" style="text-align: left;flex-direction: column;">-->
+<!--                    <div class="location-case case-planned" style="max-width: 150px;-->
+<!--                    background-color: rgba(81, 103, 246, .1);-->
+<!--                    border-radius: 19px;-->
+<!--                    align-items: center;-->
+<!--                    margin-bottom: 5px;-->
+<!--                    margin-right: 10px;-->
+<!--                    padding: 5px 10px;-->
+<!--                    display: flex;-->
+<!--                    max-width: 100px;">-->
+<!--                        <div class="circle-color" ></div>-->
+<!--                        <div class="country-status-color" style="color: #5167f6;font-weight: 500;font-size: 14px;">Planned</div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;                    <div class="location-case case-progress">&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        <div class="circle-color orange"></div>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        <div class="country-status-color orange">In Progress</div>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                    <h3 class="county-name" style="margin-top: 0;margin-bottom: 0;font-size: 18px;">United State</h3></div>-->
+<!--            </div>-->
+<!--            <div class="country-seaction" style="min-height: 90px;-->
+<!--            border: 1px solid rgba(0, 0, 0, .1);-->
+<!--            justify-content: flex-start;-->
+<!--            align-items: center;-->
+<!--            padding-left: 10px;-->
+<!--            display: flex;-->
+<!--            margin-top: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            flex-wrap: wrap;"><img-->
+<!--                    src="https://assets.website-files.com/61497c015f722323e5fb623a/63b16cd0085eb0348193f6c0_united-arab-emirates-circular.svg"-->
+<!--                    loading="lazy" alt="" class="image-15" style="width: 100px;height: 80px;display: inline-block;">-->
+<!--                <div class="text-country" style="text-align: left;flex-direction: column;">-->
+<!--                    <div class="location-case case-planned" style="max-width: 150px;-->
+<!--                    background-color: rgba(81, 103, 246, .1);-->
+<!--                    border-radius: 19px;-->
+<!--                    align-items: center;-->
+<!--                    margin-bottom: 5px;-->
+<!--                    margin-right: 10px;-->
+<!--                    padding: 5px 10px;-->
+<!--                    display: flex;-->
+<!--                    max-width: 100px;">-->
+<!--                        <div class="circle-color" ></div>-->
+<!--                        <div class="country-status-color" style="color: #5167f6;font-weight: 500;font-size: 14px;">Planned</div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash;                    <div class="location-case case-progress">&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        <div class="circle-color orange"></div>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        <div class="country-status-color orange">In Progress</div>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                    <h3 class="county-name" style="margin-top: 0;margin-bottom: 0;font-size: 18px;">United Arab Emirates</h3></div>-->
+<!--            </div>-->
+<!--            <div class="country-seaction" style="min-height: 90px;-->
+<!--            border: 1px solid rgba(0, 0, 0, .1);-->
+<!--            justify-content: flex-start;-->
+<!--            align-items: center;-->
+<!--            padding-left: 10px;-->
+<!--            display: flex;-->
+<!--            margin-top: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            flex-wrap: wrap;"><img-->
+<!--                    src="https://assets.website-files.com/61497c015f722323e5fb623a/63b16ccaedd8f587bc05a93e_egypt-circular.svg"-->
+<!--                    loading="lazy" alt="" class="image-15" style="width: 100px;height: 80px;display: inline-block;">-->
+<!--                <div class="text-country" style="text-align: left;flex-direction: column;">-->
+<!--                    <div class="location-case case-planned" style="max-width: 150px;-->
+<!--                    background-color: rgba(81, 103, 246, .1);-->
+<!--                    border-radius: 19px;-->
+<!--                    align-items: center;-->
+<!--                    margin-bottom: 5px;-->
+<!--                    margin-right: 10px;-->
+<!--                    padding: 5px 10px;-->
+<!--                    display: flex;-->
+<!--                    max-width: 100px;">-->
+<!--                        <div class="circle-color" ></div>-->
+<!--                        <div class="country-status-color" style="color: #5167f6;font-weight: 500;font-size: 14px;">Planned</div>-->
+<!--                    </div>-->
+<!--                    <h3 class="county-name" style="margin-top: 0;margin-bottom: 0;font-size: 18px;">Egypt</h3></div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash;            <div class="country-seaction" style="min-height: 90px;-->
+<!--            border: 1px solid rgba(0, 0, 0, .1);-->
+<!--            justify-content: flex-start;-->
+<!--            align-items: center;-->
+<!--            padding-left: 10px;-->
+<!--            display: flex;-->
+<!--            margin-top: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            flex-wrap: wrap;"><img&ndash;&gt;-->
+<!--            &lt;!&ndash;                    src="https://assets.website-files.com/61497c015f722323e5fb623a/63bbf52d9d5ae7c29fafb4df_Pakistan.svg"&ndash;&gt;-->
+<!--            &lt;!&ndash;                    loading="lazy" alt="" class="image-15" style="width: 100px;height: 80px;display: inline-block;">&ndash;&gt;-->
+<!--            &lt;!&ndash;                <div class="text-country" style="display: flex;text-align: left;flex-direction: column;">&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <div class="location-case case-planned" style="max-width: 150px;-->
+<!--                    background-color: rgba(81, 103, 246, .1);-->
+<!--                    border-radius: 19px;-->
+<!--                    align-items: center;-->
+<!--                    margin-bottom: 5px;-->
+<!--                    margin-right: 10px;-->
+<!--                    padding: 5px 10px;-->
+<!--                    display: flex;-->
+<!--                    max-width: 100px;">&ndash;&gt;-->
+<!--            &lt;!&ndash;                        <div class="circle-color" ></div>&ndash;&gt;-->
+<!--            &lt;!&ndash;                        <div class="country-status-color" style="color: #5167f6;font-weight: 500;font-size: 14px;">Planned</div>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <h3 class="county-name" style="margin-top: 0;margin-bottom: 0;font-size: 18px;">Pakistan</h3></div>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <div class="country-seaction" style="min-height: 90px;-->
+<!--            border: 1px solid rgba(0, 0, 0, .1);-->
+<!--            justify-content: flex-start;-->
+<!--            align-items: center;-->
+<!--            padding-left: 10px;-->
+<!--            display: flex;-->
+<!--            margin-top: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            flex-wrap: wrap;"><img&ndash;&gt;-->
+<!--            &lt;!&ndash;                    src="https://assets.website-files.com/61497c015f722323e5fb623a/63bbf461e91f66532a4de1b4_Vietnam.svg"&ndash;&gt;-->
+<!--            &lt;!&ndash;                    loading="lazy" alt="" class="image-15" style="width: 100px;height: 80px;display: inline-block;">&ndash;&gt;-->
+<!--            &lt;!&ndash;                <div class="text-country" style="display: flex;text-align: left;flex-direction: column;">&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <div class="location-case case-planned" style="max-width: 150px;-->
+<!--                    background-color: rgba(81, 103, 246, .1);-->
+<!--                    border-radius: 19px;-->
+<!--                    align-items: center;-->
+<!--                    margin-bottom: 5px;-->
+<!--                    margin-right: 10px;-->
+<!--                    padding: 5px 10px;-->
+<!--                    display: flex;-->
+<!--                    max-width: 100px;">&ndash;&gt;-->
+<!--            &lt;!&ndash;                        <div class="circle-color" ></div>&ndash;&gt;-->
+<!--            &lt;!&ndash;                        <div class="country-status-color" style="color: #5167f6;font-weight: 500;font-size: 14px;">Planned</div>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <h3 class="county-name" style="margin-top: 0;margin-bottom: 0;font-size: 18px;">Vietnam</h3></div>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        </div>-->
+
+<!--        <div class="mt16 mb16" style="text-align: center;">-->
+<!--            <div class="oe_spaced text-center">-->
+<!--                <div>-->
+<!--                    <div class="text-center">-->
+<!--                        <h2 class="display-2" style="-->
+<!--    font-family: 'Caveat';-->
+<!--    line-height: 0.9;-->
+<!--    font-weight: 700;-->
+<!--font-size: calc(1.525rem + 3.3vw);">Full integrate with Odoo <span class="x_wd_blue_highlight_01" style="background-image: url(/easypay_pos/static/description/blue_highlight_01.svg);-->
+<!--            background-position: bottom center;-->
+<!--            background-repeat: no-repeat;-->
+<!--            background-size: contain;-->
+<!--            white-space: nowrap;">Invoice</span> and <span-->
+<!--                                class="x_wd_blue_highlight_01" style="background-image: url(/easypay_pos/static/description/blue_highlight_01.svg);-->
+<!--            background-position: bottom center;-->
+<!--            background-repeat: no-repeat;-->
+<!--            background-size: contain;-->
+<!--            white-space: nowrap;">Point of sale</span></h2>-->
+<!--                    </div>-->
+<!--                    <div class="text-center">-->
+<!--                        <h2 class="display-2" style="-->
+<!--    font-family: 'Caveat';-->
+<!--    line-height: 2;-->
+<!--    font-weight: 700;-->
+<!--font-size: calc(1.525rem + 3.3vw);">ربط متكامل مع اودو <span class="x_wd_blue_highlight_01" style="background-image: url(/easypay_pos/static/description/blue_highlight_01.svg);-->
+<!--            background-position: bottom center;-->
+<!--            background-repeat: no-repeat;-->
+<!--            background-size: contain;-->
+<!--            white-space: nowrap;">الفاتورة</span> و <span-->
+<!--                                class="x_wd_blue_highlight_01" style="background-image: url(/easypay_pos/static/description/blue_highlight_01.svg);-->
+<!--            background-position: bottom center;-->
+<!--            background-repeat: no-repeat;-->
+<!--            background-size: contain;-->
+<!--            white-space: nowrap;">نقاط البيع</span></h2>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <div class="mt16 mb16" style="text-align: center;">
+            <img src="integrated.png" class="img img-responsive center-block" style="width: 90%;">
+        </div>
+
+        <div class="mb-n5" style="padding-bottom: 70px;margin-bottom: -3rem !important;">
+            <a target="_blank" href="https://youtu.be/_5t9Lu7TyrE">
+                                <img class="img-fluid" src="easypayFalcon.png" style="padding: 0.75rem;
+            background-color: #ffffff;
+            border: 0 solid #dee2e6;
+            border-radius: 0.625rem;
+            max-width: 100%;width:800px ;height:auto">
+                            </a>
+<!--            <iframe class="img-thumbnail" style="box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);" width="800" height="500"-->
+<!--                    src="https://www.youtube.com/embed/_5t9Lu7TyrE?si=t-2Eid4ZFrzOGHgh"-->
+<!--                    title="YouTube video player" frameborder="0"-->
+<!--                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"-->
+<!--                    allowfullscreen></iframe>-->
+
+        </div>
+    </div>
+</section>
+<section style="padding-top:100px;justify-content: center;text-align: center">
+
+<!--    <div class="text-center">-->
+<!--              <h2 class="display-2" style="font-family: 'Caveat';line-height: 0.9;font-weight: 700;">-->
+<!--                <span class="x_wd_yellow_highlight_04" style="background-image: url(https://easyerps.com/web/image/1406-5e524e27/yellow_highlight_04.svg);-->
+<!--    background-position: bottom;-->
+<!--            background-repeat: no-repeat;-->
+<!--            background-size: contain;-->
+<!--            white-space: nowrap;">Easypay Use cases</span>-->
+<!--              </h2>-->
+<!--            </div>-->
+<!--            <div class="text-center" style="margin-bottom: 130px;">-->
+<!--              <h2 class="display-2" style="font-family: 'Caveat';line-height: 0.9;font-weight: 700;margin-block-start: 0.83em;margin-block-end: 0.83em;">-->
+<!--                <span class="x_wd_yellow_highlight_04" style="background-image: url(https://easyerps.com/web/image/1406-5e524e27/yellow_highlight_04.svg);-->
+<!--    background-position: bottom;-->
+<!--            background-repeat: no-repeat;-->
+<!--            background-size: contain;-->
+<!--            white-space: nowrap;">طرق إستخدام إيزي باي</span>-->
+<!--              </h2>-->
+<!--            </div>-->
+    <div class="mt16 mb16" style="text-align: center;">
+            <img src="Easypay Use cases.png" class="img img-responsive center-block" style="width: 75%;">
+        </div>
+    <div class="div_fireworks" style="display: flex;
+            align-items: flex-start;
+            justify-content: center;">
+
+              <div style="width: 80%;margin-top: 70px;">
+                <span class="x_wd_display_fireworks_01" style="position: relative;
+            font-size: calc(1.725rem + 3.7vw);">Invoice Payment Enabled Mobile</span>
+              </div>
+        <img src="https://easyerps.com/web/image/1371-f3e48ad7/fireworks_02.svg" class="fireworks_img" loading="lazy" style="position: absolute;
+            top: auto;
+            left: 85%;
+            bottom: auto;
+            right: auto;">
+            </div>
+            <div class="div_fireworks" style="display: flex;text-align: -webkit-center;
+            align-items: flex-start;
+            justify-content: center;">
+              <div style="margin-bottom: 70px;width: 80%;">
+                <span class="x_wd_display_fireworks_02" style="position: relative;
+            font-size: calc(1.725rem + 2.7vw);">دفع الفواتير عبر الجوال</span>
+              </div>
+            </div>
+            <div class="s_wd_features_02 bg-200" data-snippet="s_wd_features" data-name="Features"
+                 style="border-top-right-radius: 5rem;
+            border-bottom-left-radius: 5rem;
+            display: flex;flex-direction: column;align-items: center;font-size: calc(1rem + 1vw) !important;margin-bottom: 30px;">
+              <p style="width: 90%;padding-top: 10px;direction: ltr;">By using Easypay you can accept payments directly on your mobile phone and integrated with your billing system.</p>
+              <p style="width: 90%;direction: rtl;">باستخدام إيزي باي يمكنك استقبال المدفوعات مباشرة على الهاتف المحمول مع الربط المتكامل مع نظام الفوترة الخاص بك</p>
+            </div>
+            <div class="row" style="display: flex;flex-wrap: wrap;margin-bottom: 70px;justify-content: space-around;">
+              <div class="col-md-4" style="align-items: center;
+            padding: 2rem;">
+                <div class="background_circle" style="
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F3F4F6;
+            border-radius: 50%;">
+                  <img src="https://easyerps.com/web/image/1143-36300d76/easymobil1.png" class="img img-responsive center-block background_circle_img" loading="lazy" style="height: 300px;">
+                </div>
+                <h3 class="h5 mt-3" style="margin-top: 1rem !important;">Create</h3>
+              </div>
+                <div class="col-md-4" style="align-items: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;">
+                <div class="background_circle" style="
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F3F4F6;
+            border-radius: 50%;">
+                  <img src="https://easyerps.com/web/image/1144-5556ea6a/easymobil2.png" class="img img-responsive center-block background_circle_img" loading="lazy" style="height: 300px;">
+                </div>
+                <h3 class="h5 mt-3" style="margin-top: 1rem !important;">Swip</h3>
+              </div>
+              <div class="col-md-4" style="align-items: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;">
+                <div class="background_circle" style="
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F3F4F6;
+            border-radius: 50%;">
+                  <img src="https://easyerps.com/web/image/1145-1314b9d1/easymobil3.png" class="img img-responsive center-block background_circle_img" loading="lazy" style="height: 300px;">
+                </div>
+                <h3 class="h5 mt-3" style="margin-top: 1rem !important;">Validate</h3>
+              </div>
+            </div>
+            <div>
+              <img src="https://easyerps.com/web/image/1377-a47319e1/yellow_highlight_03.svg" style="width: 50%;" loading="lazy">
+            </div>
+    <div class="div_fireworks" style="display: flex;
+            align-items: flex-start;
+            justify-content: center;">
+
+              <div style="width: 80%;margin-top: 70px;">
+                <span class="x_wd_display_fireworks_01" style="position: relative;
+            font-size: calc(1.725rem + 3.7vw);">All in one device</span>
+              </div>
+        <img src="https://easyerps.com/web/image/1371-f3e48ad7/fireworks_02.svg" class="fireworks_img" loading="lazy" style="position: absolute;
+            top: auto;
+            left: 85%;
+            bottom: auto;
+            right: auto;">
+            </div>
+            <div class="div_fireworks" style="display: flex;text-align: -webkit-center;
+            align-items: flex-start;
+            justify-content: center;">
+              <div style="margin-bottom: 70px;width: 80%;">
+                <span class="x_wd_display_fireworks_02" style="position: relative;
+            font-size: calc(1.725rem + 2.7vw);">جهاز الكل في واحد</span>
+              </div>
+            </div>
+            <div class="s_wd_features_02 bg-200" data-snippet="s_wd_features" data-name="Features"
+                 style="border-top-right-radius: 5rem;
+            border-bottom-left-radius: 5rem;
+            display: flex;flex-direction: column;align-items: center;font-size: calc(1rem + 1vw) !important;margin-bottom: 30px;">
+              <p style="width: 90%;padding-top: 10px;direction: ltr;">Easypay can be used with all-in-one devices to accept payments, print receipt and integrated with your point of sale system.</p>
+              <p style="width: 90%;direction: rtl;">بامكانك استخدام إيزي باي على اجهزة الكل في واحد لاستقبال المدفوعات وطباعة الايصال مع الربط المتكامل مع نظام نقاط البيع الخاص بك</p>
+            </div>
+            <div class="row" style="display: flex;justify-content: space-around;flex-wrap: wrap;margin-bottom: 70px;">
+              <div class="col-md-4" style="align-items: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;">
+                <div class="background_circle_3" STYLE="
+            display: flex;
+            justify-content: center;
+            align-items: center;">
+                  <img src="https://easyerps.com/web/image/1370-1639ff53/easypaystp1.svg" class="img img-responsive center-block background_circle_img_3" loading="lazy" style="height: 230px;">
+                </div>
+                <h3 class="h5 mt-3" style="margin-top: 1rem !important;">Create</h3>
+              </div>
+              <div class="col-md-4" style="align-items: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;">
+                <div class="background_circle_3" style="
+            display: flex;
+            justify-content: center;
+            align-items: center;">
+                  <img src="https://easyerps.com/web/image/1073-5533e210/easypaystp2.svg" class="img img-responsive center-block background_circle_img_3" loading="lazy" style="height: 230px;">
+                </div>
+                <h3 class="h5 mt-3" style="margin-top: 1rem !important;">Swip</h3>
+              </div>
+              <div class="col-md-4" style="align-items: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;">
+                <div class="background_circle_3" style="
+            display: flex;
+            justify-content: center;
+            align-items: center;">
+                  <img src="https://easyerps.com/web/image/1074-d8bd7e9e/easypaystp3.svg" class="img img-responsive center-block background_circle_img_3" loading="lazy" style="height: 230px;">
+                </div>
+                <h3 class="h5 mt-3" style="margin-top: 1rem !important;">Validate &amp; Print</h3>
+              </div>
+            </div>
+            <div>
+              <img src="https://easyerps.com/web/image/1377-a47319e1/yellow_highlight_03.svg" style="width: 50%;" loading="lazy">
+            </div>
+
+    <div class="div_fireworks" style="display: flex;
+            align-items: flex-start;
+            justify-content: center;">
+
+              <div style="width: 80%;margin-top: 70px;">
+                <span class="x_wd_display_fireworks_01" style="position: relative;
+            font-size: calc(1.725rem + 3.7vw);">Payment Customer Screen</span>
+              </div>
+        <img src="https://easyerps.com/web/image/1371-f3e48ad7/fireworks_02.svg" class="fireworks_img" loading="lazy" style="position: absolute;
+            top: auto;
+            left: 85%;
+            bottom: auto;
+            right: auto;">
+            </div>
+            <div class="div_fireworks" style="display: flex;text-align: -webkit-center;
+            align-items: flex-start;
+            justify-content: center;">
+              <div style="margin-bottom: 40px;width: 80%;">
+                <span class="x_wd_display_fireworks_02"  style="position: relative;
+            font-size: calc(1.725rem + 2.7vw);">شاشة تفاعلية لتأكيد الطلبات والدفع</span>
+              </div>
+            </div>
+            <div class="s_wd_features_02 bg-200" data-snippet="s_wd_features" data-name="Features"
+                 style="border-top-right-radius: 5rem;
+            border-bottom-left-radius: 5rem;
+            display: flex;flex-direction: column;align-items: center;font-size: calc(1rem + 1vw) !important;margin-bottom: 30px;">
+              <p style="width: 90%;padding-top: 10px;direction: ltr;">Easypay can be used on a tablet to display the order details to the customer and enable the customer to pay by swiping the card or mobile phone directly on the screen.</p>
+              <p style="width: 90%;direction: rtl;">بامكانك استخدام ايزي باي على جهاز لوحي لعرض تفاصيل الطلب للعميل وتمكين العميل الدفع بتمرير البطاقة او الجوال على الشاشه مباشرة</p>
+            </div>
+            <div class="row" style="display: flex;flex-wrap: wrap;margin-bottom: 70px;justify-content: space-around;">
+              <div class="col-md-4" style="align-items: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;">
+                <div class="background_circle_2" style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F3F4F6;
+            border-radius: 30%;">
+                  <img src="https://easyerps.com/web/image/1348-ae34bf59/cScreen2.png" style="width: 100%; height: 100%;" class="img img-responsive center-block background_circle_img" loading="lazy" style="height: 300px;">
+                </div>
+                <h3 class="h5 mt-3" style="margin-top: 1rem !important;">Order details</h3>
+              </div>
+              <div class="col-md-4" style="align-items: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;">
+                <div class="background_circle_2" style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F3F4F6;
+            border-radius: 30%;">
+                  <img src="https://easyerps.com/web/image/1349-02ad7fd2/cScreen3.png" style="width: 100%; height: 100%;" class="img img-responsive center-block background_circle_img" loading="lazy" style="height: 300px;">
+                </div>
+                <h3 class="h5 mt-3" style="margin-top: 1rem !important;">Customers tap to pay</h3>
+              </div>
+              <div class="col-md-4" style="align-items: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;">
+                <div class="background_circle_2" style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F3F4F6;
+            border-radius: 30%;">
+                  <img src="https://easyerps.com/web/image/1350-70f898c7/cScreen1.png" style="width: 100%; height: 100%;" class="img img-responsive center-block background_circle_img" loading="lazy" style="height: 300px;">
+                </div>
+                <h3 class="h5 mt-3" style="margin-top: 1rem !important;">Payment confirmation</h3>
+              </div>
+            </div>
+</section>
+
+<section class="s_wd_features py-5 py-lg-7 bg-200" style="border-top-right-radius: 15rem;
+            border-bottom-left-radius: 15rem;padding-top: 3rem !important;
+            padding-bottom: 3rem !important;background-color: #F3F4F6 !important;
+            color: #111827; text-align: center;margin-top: 30px;" data-snippet="s_wd_features" data-name="Features">
+    <div class="oe_spaced">
+        <h1 class="display-1" style="
+        font-size: calc(1rem + 2.5vw);
+    font-family: 'Caveat';
+    line-height: 0.9;
+    font-weight: 700;">Accept payments <span class="text-o-color-2" style="color: #017e84 !important;">anywhere </span>,
+            <span class="text-o-color-2" style="color: #017e84 !important;">any way </span>
+            you want !</h1>
+    </div>
+    <div class="oe_spaced">
+        <h1 class="display-1" style="
+        font-size: calc(1rem + 2.5vw);
+    font-family: 'Caveat';
+    line-height: 0.9;
+    font-weight: 700;">اقبل المدفوعات <span class="text-o-color-2" style="color: #017e84 !important;">في اي مكان </span>,
+            <span class="text-o-color-2" style="color: #017e84 !important;">وبعدة طرق </span>
+        </h1>
+
+    </div>
+    <div class="oe_spaced">
+        <div class="mb-n5" style="display: inline;margin-bottom: -3rem !important;">
+            <a target="_blank" href="https://www.youtube.com/embed/lB6CvZHCoV8?si=e95pP6ECWFvhUPcR">
+                                <img class="img-fluid" src="Easypay_promo.png" style="padding: 0.75rem;
+            background-color: #ffffff;
+            border: 0 solid #dee2e6;
+            border-radius: 0.625rem;
+            max-width: 100%;width:400px ;height:250px">
+                            </a>
+<!--            <iframe class="img-thumbnail" style="width: 400px;height: 250px;"-->
+<!--                    src="https://www.youtube.com/embed/lB6CvZHCoV8?si=e95pP6ECWFvhUPcR"-->
+<!--                    title="YouTube video player" frameborder="0"-->
+<!--                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"-->
+<!--                    allowfullscreen></iframe>-->
+
+        </div>
+        <div class="mb-n5" style="display: inline;margin-bottom: -3rem !important;">
+            <a target="_blank" href="https://www.youtube.com/embed/kOqK0Fvg7Cs?si=oPFhpO0FXZPCFiUH">
+                                <img class="img-fluid" src="Easypay_promo3.png" style="padding: 0.75rem;
+            background-color: #ffffff;
+            border: 0 solid #dee2e6;
+            border-radius: 0.625rem;
+            max-width: 100%;width:400px ;height:250px">
+                            </a>
+<!--            <iframe class="img-thumbnail" style="width: 400px;height: 250px"-->
+<!--                    src="https://www.youtube.com/embed/kOqK0Fvg7Cs?si=oPFhpO0FXZPCFiUH"-->
+<!--                    title="YouTube video player" frameborder="0"-->
+<!--                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"-->
+<!--                    allowfullscreen></iframe>-->
+
+        </div>
+        <div class="mb-n5" style="display: inline;margin-bottom: -3rem !important;">
+            <a target="_blank" href="https://www.youtube.com/embed/RcqIXivYeDY?si=VTxCWa9dZIRiht_E">
+                                <img class="img-fluid" src="Easypay_promo4.png" style="padding: 0.75rem;
+            background-color: #ffffff;
+            border: 0 solid #dee2e6;
+            border-radius: 0.625rem;
+            max-width: 100%;width:400px ;height:250px">
+                            </a>
+<!--            <iframe class="img-thumbnail" style="width: 400px;height: 250px"-->
+<!--                    src="https://www.youtube.com/embed/RcqIXivYeDY?si=VTxCWa9dZIRiht_E"-->
+<!--                    title="YouTube video player" frameborder="0"-->
+<!--                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"-->
+<!--                    allowfullscreen></iframe>-->
+
+        </div>
+    </div>
+
+    <!--    <div class="mt16 mb16" style="text-align: center;">-->
+    <!--        <img src="easypaystp4.svg" class="img img-responsive center-block" style="width: 30%;">-->
+    <!--    </div>-->
+    <div class="container" style="width: 100%;
+            margin-top: 70px;
+            margin-right: auto;
+            margin-left: auto;">
+        <a class="btn btn-lg btn-primary mb-3"
+           style="display: inline-block;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #374151;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            padding: 1rem 2rem;
+            font-size: 20px;
+            border-radius: 0.25rem;
+            color: #FFFFFF;
+            background-color: #34969b;
+            border-color: #34969b;
+            margin-bottom: 1rem !important;" href="https://easyerps.com/-1">Start now - اطلبه الان</a>
+        <!--        <br>-->
+        <!--                <img src="https://odoocdn.com/openerp_website/static/src/img/arrows/secondary_arrow_sm_01.svg" class="d-block mx-auto mb-2" alt="" loading="lazy" style="">-->
+        <!--                <small style="display: block;">No credit card required <br> Instant access</small>-->
+    </div>
+</section>
+
+
+<!--<section class="d-flex align-items-center"-->
+<!--         style="margin-top:6rem !important;border-top:2px solid #714B67; padding:15px 0px">-->
+<!--</section>-->
+
+</section>
+
+
+<!--<div class="position-relative  pt-2">-->
+<!--    <section style="padding:10px 0px 20px 0px">-->
+<!--        <div class="container px-0">-->
+<!--            <div class="sh_center text-center" style="padding:0px 10px;">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-12">-->
+<!--                       <div  role="alert">-->
+<!--                          <div style=" padding: 0.75rem 1.25rem; color: #000000; background-color: #c9c9c9; border-color: #c9c9c9;font-size: 30px;text-align: left;">-->
+<!--                              Requirement Setup:-->
+<!--                          </div>-->
+<!--                            <ul style="font-size: 20px;text-align: left;">-->
+<!--                                <li style="margin-top:30px; margin-bottom:30px"><b>Environment: Windows</b></li>-->
+<!--                                <li style="margin-top:30px; margin-bottom:30px"><b>Connecting method: USB</b></li>-->
+<!--                                <li style="margin-top:30px; margin-bottom:30px"><b>Installation: Device driver & Websock ECR (Not include on the module please contact provider)</b></li>-->
+<!--                                <li style="margin-top:30px; margin-bottom:30px"><b>Browser: any</b></li>-->
+<!--                            </ul>-->
+<!--                       </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--</div>-->
+
+<!--<section class="mb64">-->
+<!--    <div class="mt16 mb16" style="text-align: center;">-->
+<!--&lt;!&ndash;        <div class="oe_spaced text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <h1><a href="https://youtu.be/Dy3lZUzjh0I" target="_blank">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <i class="fa fa-youtube-play"></i>  Demo Video&ndash;&gt;-->
+<!--&lt;!&ndash;                    </a></h1>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        <img src="OdooAisino.gif" class="img img-responsive center-block" style="border:8px solid lightgray;width:90%;">-->
+<!--    </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<section style="margin-top:1rem !important; padding:15px 0px;text-align: center;">
+    <center class="oe_slogan">
+        <a href="mailto:support@easyerps.com?subject=Odoo Support / Development&amp;body="
+           style="border-radius:45px; display:inline-block; color:#ffffff; font-family:'Roboto', sans-serif; font-size:23px; padding:10px 33px; background-color:black; text-decoration:none"><i
+                class="fa fa-envelope"></i>&nbsp; easypay@easyerps.com</a>
+        <a href="https://wa.me/966554477623"
+           style="border-radius:45px; display:inline-block; color:#ffffff; font-family:'Roboto', sans-serif; font-size:23px; padding:10px 33px; background-color:black; text-decoration:none"><i
+                class="fa fa-skype"></i>&nbsp; Whatsapp: https://wa.me/966554477623</a>
+    </center>
+</section>
+</body>
+</html>

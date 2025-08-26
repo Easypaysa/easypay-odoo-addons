@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="easypay_pos.EasyCustomerDisplayimin" owl="1">
+        <div class="imindisplayimage">
+            <t t-if="_receipt.lineCount === 2">
+
+        <div class="iminline1"><t t-esc="_receipt.line1"/></div>
+
+        <div class="iminline2"><t t-esc="_receipt.line2"/></div>
+            </t>
+            <t t-else="">
+                <div style="height: 9px;">
+
+                </div>
+                <div class="iminoneline">
+                    <t t-esc="_receipt.line1"/>
+                </div>
+            </t>
+
+        </div>
+    </t>
+</templates>

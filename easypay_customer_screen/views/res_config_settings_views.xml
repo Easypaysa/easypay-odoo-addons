@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.easypay_customer_screen</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <div id="pos_connected_devices_section" position="after">
+                <h2>Easypay Customer Display</h2>
+                <div class="row mt16 o_settings_container" id="pos_easypay_customer_screen_section">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="pos_show_easypay_customer_screen"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="pos_show_easypay_customer_screen" string="Easypay Customer Display"/>
+                            <div class="text-muted">
+                                Show checkout to customers through Easypay App display
+                            </div>
+                            <div class="content-group" attrs="{'invisible': [('pos_show_easypay_customer_screen', '=', False)]}">
+                                <div class="mt16">
+                                    <div class="row">
+                                        <label string="Display Mode" for="pos_easypay_display_mode" class="col-lg-3 o_light_label"/>
+                                        <field name="pos_easypay_display_mode" widget="radio" options="{'horizontal': true}"/>
+                                    </div>
+                                </div>
+                                <div class="mt16" attrs="{'invisible': [('pos_easypay_display_mode', '!=', 'welcome_message')]}">
+                                    <div class="row">
+                                        <label string="Welcome Message" for="pos_easypay_welcome_message" class="col-lg-3 o_light_label"/>
+                                        <field name="pos_easypay_welcome_message" class="col-lg-9" placeholder="Welcome..."/>
+                                    </div>
+                                </div>
+                                <div class="mt16" attrs="{'invisible': [('pos_easypay_display_mode', '!=', 'slideshow')]}">
+                                    <div class="row">
+                                        <label string="Slideshow Images" for="pos_easypay_slide_image_ids" class="col-lg-3 o_light_label"/>
+                                        <field name="pos_easypay_slide_image_ids" class="col-lg-9" widget="many2many_binary"/>
+                                    </div>
+                                </div>
+                                <div class="mt16">
+                                    <div class="row">
+                                        <label string="Logo Image" for="pos_easypay_logo_image" class="col-lg-3 o_light_label"/>
+                                        <field name="pos_easypay_logo_image" class="col-lg-9" widget="image" options="{'size': [150, 150]}"/>
+                                    </div>
+                                </div>
+                                <div class="mt16">
+                                    <div class="row">
+                                        <label string="Thank You Message" for="pos_easypay_thank_you_message" class="col-lg-3 o_light_label"/>
+                                        <field name="pos_easypay_thank_you_message" class="col-lg-9" placeholder="Thank you for your purchase!"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="easypay_customer_screen.EasypayControlButton" owl="1">
+        <div class="oe_status" t-if="isEasypayEnabled" t-on-click="onClick">
+            <i class="fa fa-fw fa-desktop" aria-hidden="true" title="Update Easypay Customer Screen"></i>
+            <span t-if="!env.isMobile" style="padding-left: 5px;">Easypay</span>
+        </div>
+    </t>
+
+</templates>

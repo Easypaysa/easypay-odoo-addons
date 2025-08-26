@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="Chrome" t-inherit="point_of_sale.Chrome" t-inherit-mode="extension" owl="1">
+       <xpath expr="//div[@class='pos-topheader']" position="inside">
+<!--        <ProxyButton/>-->
+<!--           <div id="nearpay_root" style="z-index: 1000;position: absolute;"/>-->
+           <div t-if="env.pos.easypay_payment_method" style="z-index: 1000;position: absolute;">
+           <div class="nearpay-app" t-att-class="{ collapsed: env.pos.is_collapsed,connected: env.pos.is_connected }">
+<!--               <button class="np-connection-indecator np-disconnected" style="padding: 20px;" t-on-click="window.location.reload()"></button>-->
+
+
+               <button t-if="env.pos.is_collapsed and env.pos.is_connected " data-testid="connected-icon" class="np-connection-icon connected" style="padding: 0px;border: 0px;background: none;font-size: large;" t-on-click="onCollapsed">
+                   <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                       <path d="M12 6c3.537 0 6.837 1.353 9.293 3.809l1.414-1.414C19.874 5.561 16.071 4 12 4c-4.071.001-7.874 1.561-10.707 4.395l1.414 1.414C5.163 7.353 8.463 6 12 6zm5.671 8.307c-3.074-3.074-8.268-3.074-11.342 0l1.414 1.414c2.307-2.307 6.207-2.307 8.514 0l1.414-1.414z"></path>
+                       <path d="M20.437 11.293c-4.572-4.574-12.301-4.574-16.873 0l1.414 1.414c3.807-3.807 10.238-3.807 14.045 0l1.414-1.414z"></path>
+                       <circle cx="12" cy="18" r="2"></circle>
+                   </svg>
+               </button>
+
+               <button t-if="env.pos.is_collapsed and !env.pos.is_connected" class="np-connection-indecator np-disconnected" style="padding: 0px;" t-on-click="onCollapsed"></button>
+               <div t-if="!env.pos.is_collapsed and env.pos.is_connected " class="nearpay-main">
+                   <button class="np-minimize-b" style="background: white;padding: 0px;" t-on-click="onCollapsed">
+                       <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"></path>
+                       </svg>
+                   </button>
+                   <div class="np-flex-column np-expand" style="padding: 5px;">
+                       <p class="np-title">Connect</p>
+                       <div class="np-expand np-flex-column" style="justify-content: center;">
+                           <div class="np-user-slot">
+                               <div style="display: flex; align-items: end;">
+                                   <div style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; padding-right: 8px;">
+                                       <div class="np-fs-5" style="display: flex;">
+                                           <div data-testid="connected-icon" class="np-connection-icon connected">
+                                               <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                   <path d="M12 6c3.537 0 6.837 1.353 9.293 3.809l1.414-1.414C19.874 5.561 16.071 4 12 4c-4.071.001-7.874 1.561-10.707 4.395l1.414 1.414C5.163 7.353 8.463 6 12 6zm5.671 8.307c-3.074-3.074-8.268-3.074-11.342 0l1.414 1.414c2.307-2.307 6.207-2.307 8.514 0l1.414-1.414z"></path>
+                                                   <path d="M20.437 11.293c-4.572-4.574-12.301-4.574-16.873 0l1.414 1.414c3.807-3.807 10.238-3.807 14.045 0l1.414-1.414z"></path>
+                                                   <circle cx="12" cy="18" r="2"></circle>
+                                               </svg>
+                                           </div>
+                                       </div>
+                                       <div class="np-fs-1">Wireless</div>
+                                   </div>
+                                   <div class="np-fs-5" style="display: inline-flex; flex-direction: column; align-items: start; justify-content: center;">
+                                       <div>Ip: <t t-esc="state.ipInputValue" /></div>
+                                       <div>Port: <t t-esc="state.portInputValue" /></div>
+                                   </div>
+                               </div>
+                               <div>
+                                   <button class="np-btn np-btn-danger" style="padding: 4px 11px; font-size: 11px; border-radius: 8px;" t-on-click="onDisCollapsed">Disconnect</button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div t-if="!env.pos.is_collapsed and !env.pos.is_connected" class="nearpay-main">
+                   <button class="np-minimize-b" style="background: white;padding: 0px;" t-on-click="onCollapsed">
+                       <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em"
+                            width="1em" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"></path>
+                       </svg>
+                   </button>
+                    <div class="np-flex-column np-expand" style="padding: 5px;">
+                           <div class="np-connection-indecator-container">
+                               <div class="np-connection-indecator np-disconnected"></div>
+                           </div>
+                           <p class="np-title">Connect</p>
+                           <p class="np-sub">Please enter the information you are getting from Easypay to connect with the device</p>
+                       <div class="connectors">
+                           <div class="connector selected " data-target="Wireless" style="min-width: 100%;">
+                               <div class="connector-icon">
+                                   <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                        height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M12 6c3.537 0 6.837 1.353 9.293 3.809l1.414-1.414C19.874 5.561 16.071 4 12 4c-4.071.001-7.874 1.561-10.707 4.395l1.414 1.414C5.163 7.353 8.463 6 12 6zm5.671 8.307c-3.074-3.074-8.268-3.074-11.342 0l1.414 1.414c2.307-2.307 6.207-2.307 8.514 0l1.414-1.414z"></path>
+                                       <path d="M20.437 11.293c-4.572-4.574-12.301-4.574-16.873 0l1.414 1.414c3.807-3.807 10.238-3.807 14.045 0l1.414-1.414z"></path>
+                                       <circle cx="12" cy="18" r="2"></circle>
+                                   </svg>
+                               </div>
+                               <div class="connector-name">Wireless</div>
+                           </div>
+                           <div class="slider" style="width: 100%; left: 0%;"></div>
+                       </div>
+                       <div class="np-connector-content np-flex-column np-expand" style="padding-top: 10px;">
+                           <div class="np-expand np-flex-column">
+                               <div class="np-expand np-flex-column" style="position: relative;">
+                                   <div class="np-ws-inputs-container np-expand">
+                                       <div style="padding-right: 5px;">
+                                           <div>
+                                               <label class="np-fs-5" for=":r0:" style="font-weight: bold;">Ip Address</label>
+                                           </div>
+                                           <input t-model="state.ipInputValue" class="np-text-center np-fs-5 undefined" type="text" value="localhost"/>
+                                        </div>
+                                       <div style="padding-left: 5px;display: none;">
+                                           <div>
+                                               <label class="np-fs-5" for=":r1:" style="font-weight: bold;">Port</label>
+                                           </div>
+                                           <input t-model="state.portInputValue" class="np-text-center np-fs-4 undefined" type="text" value="5000"/>
+                                       </div>
+                                   </div>
+                                   <div class="np-error-message "></div>
+                                </div>
+                               <button class="np-btn np-btn-primary" t-on-click="onConnected">Connect</button>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+                <div t-if="!env.pos.is_collapsed" class="nearpay-footer">powered by <span style="font-weight: bold;">Easypay</span></div>
+           </div>
+
+           </div>
+    </xpath>
+    </t>
+
+</templates>
