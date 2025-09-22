@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+    <record id="view_pos_session_inherit_daily_reconciliation_button" model="ir.ui.view">
+        <field name="name">pos.session.form.inherit.daily.reconciliation.button</field>
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='oe_button_box']" position="inside">
+                <button name="action_show_daily_reconciliation" type="object" class="oe_stat_button" icon="fa-file-text">
+                    <field name="total_reconciliation_amount" widget="statinfo" string="Reconciliations"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

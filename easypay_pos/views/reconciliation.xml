@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_daily_reconciliation_list" model="ir.ui.view">
+        <field name="name">daily.reconciliation.list</field>
+        <field name="model">daily.reconciliation</field>
+        <field name="arch" type="xml">
+            <list string="Daily Reconciliations">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="terminal_id"/>
+                <field name="total_total"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_daily_reconciliation_form" model="ir.ui.view">
+        <field name="name">daily.reconciliation.form</field>
+        <field name="model">daily.reconciliation</field>
+        <field name="arch" type="xml">
+            <form string="Daily Reconciliation" create="false" edit="false">
+                <sheet>
+                    <group cols="4" name="order_fields">
+                        <field name="name"/>
+                        <field name="date"/>
+                        <field name="qr_code" widget="url"/>
+                        <field name="merchant_id"/>
+                        <field name="terminal_id"/>
+                        <field name="user_id"/>
+                        <field name="session_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Card Scheme Lines">
+                            <field name="scheme_ids" nolabel="1">
+                                <list string="Card Scheme Lines" create="0" delete="0" editable="top">
+                                    <field name="name"/>
+                                    <field name="pos_debit_total"/>
+                                    <field name="pos_debit_count"/>
+                                    <field name="pos_credit_total"/>
+                                    <field name="pos_credit_count"/>
+                                    <field name="pos_total_total"/>
+                                </list>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right" colspan="2" name="details">
+                                <field name="purchase_total"/>
+                                <field name="purchase_count"/>
+                                <field name="refund_total"/>
+                                <field name="refund_count"/>
+                                <field name="purchase_reversal_total"/>
+                                <field name="purchase_reversal_count"/>
+                                <field name="refund_reversal_total"/>
+                                <field name="refund_reversal_count"/>
+                                <div class="oe_subtotal_footer_separator oe_inline">
+                                </div>
+                                <field name="total_total" force_save="1" widget="monetary"/>
+                                <field name="total_count" force_save="1" widget="monetary"/>
+                            </group>
+                        </page>
+                        <page string="Notes">
+                            <field name="note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_daily_reconciliation" model="ir.actions.act_window">
+        <field name="name">Daily Reconciliations</field>
+        <field name="res_model">daily.reconciliation</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_daily_reconciliation" name="Daily Reconciliations"
+              parent="point_of_sale.menu_point_of_sale" action="action_daily_reconciliation"/>
+</odoo>

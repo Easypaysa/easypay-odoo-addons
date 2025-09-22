@@ -1,0 +1,139 @@
+/* Reconciliation info styling in closing popup */
+.reconciliation-info-container {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+.reconciliation-info-container .overview-info {
+    font-size: 16px;
+}
+
+.reconciliation-info-container .info-title {
+    color: #495057;
+}
+
+.reconciliation-info-container .info-value {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.reconciliation-status {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.reconciliation-status.text-success {
+    color: #28a745 !important;
+}
+
+.reconciliation-status.text-warning {
+    color: #ffc107 !important;
+}
+
+/* Reconciliation buttons styling */
+.close-pos-popup .button.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}
+
+.close-pos-popup .button.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+
+.close-pos-popup .button.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: #fff;
+}
+
+.close-pos-popup .button.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+/* Reconciliation buttons container styling - now FIRST line */
+.reconciliation-buttons-container {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.reconciliation-buttons-container .button {
+    min-width: 150px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.reconciliation-buttons-container .button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+    .reconciliation-info-container {
+        margin-bottom: 15px;
+    }
+    
+    .reconciliation-info-container .overview-info {
+        flex-direction: column;
+    }
+    
+    .reconciliation-info-container .info-title,
+    .reconciliation-info-container .info-value {
+        text-align: center;
+    }
+    
+    /* Footer adjustments for mobile */
+    .close-pos-popup .modal-footer,
+    .close-pos-popup [t-set-slot="footer"] {
+        padding-bottom: 20px !important;
+        margin-bottom: 10px !important;
+        padding-top: 15px !important;
+    }
+    
+    /* Move footer content up a bit more */
+    .close-pos-popup .modal-body {
+        padding-bottom: 10px !important;
+    }
+    
+    /* Reconciliation buttons container mobile styling - FIRST line */
+    .reconciliation-buttons-container {
+        margin-bottom: 20px;
+        padding: 12px;
+        flex-direction: row !important; /* Keep horizontal even on mobile */
+        justify-content: space-between;
+    }
+    
+    /* Reconciliation buttons mobile adjustments */
+    .reconciliation-buttons-container .button {
+        font-size: 13px !important;
+        padding: 10px 12px !important;
+        min-width: unset;
+        white-space: nowrap;
+        flex: 1;
+        margin: 0 4px;
+    }
+    
+    .reconciliation-buttons-container .button:first-child {
+        margin-left: 0;
+    }
+    
+    .reconciliation-buttons-container .button:last-child {
+        margin-right: 0;
+    }
+    
+    /* Better text handling for mobile buttons */
+    .reconciliation-buttons-container .button span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+} 

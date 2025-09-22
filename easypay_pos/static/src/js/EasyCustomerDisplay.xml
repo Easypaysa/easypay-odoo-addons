@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="easypay_pos.EasyCustomerDisplay" owl="1">
+        <div class="zcsdisplayimage">
+            <t t-if="_receipt.lineCount === 2">
+                <div style="height: 8px;">
+
+                </div>
+                <div class="line1">
+                    <t t-esc="_receipt.line1"/>
+                </div>
+                <div class="line2">
+                    <t t-esc="_receipt.line2"/>
+                </div>
+            </t>
+            <t t-else="">
+                <div style="height: 9px;">
+
+                </div>
+                <div class="oneline">
+                    <t t-esc="_receipt.line1"/>
+                </div>
+            </t>
+
+        </div>
+    </t>
+
+</templates>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+<!--    <t t-name="easypay_pos.ReceiptScreen" t-inherit="point_of_sale.ReceiptScreen" t-inherit-mode="extension">-->
+<!--        <xpath expr="//form[contains(@class, 'send-email')]" position="replace">-->
+<!--        </xpath>-->
+<!--    </t>-->
+
+
+
+</templates>

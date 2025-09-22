@@ -1,0 +1,734 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* easypay_pos
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-10 17:07+0000\n"
+"PO-Revision-Date: 2025-07-13 03:28+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && "
+"n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.6\n"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/payment_easypay.js:0
+#, fuzzy
+msgid ""
+"%s\n"
+" %s"
+msgstr ""
+"%s\n"
+" %s"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/payment_easypay.js:0
+#, fuzzy
+msgid "Are you sure you want to use the last transaction? with amount %s"
+msgstr "هل أنت متأكد من أنك تريد استخدام المعاملة الأخيرة؟ بالمبلغ %s"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/receipt_screen/print_reconciliation_receipt_screen.xml:0
+#, fuzzy
+msgid "Back"
+msgstr "رجوع"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__scheme_ids
+#: model_terms:ir.ui.view,arch_db:easypay_pos.view_daily_reconciliation_form
+#, fuzzy
+msgid "Card Scheme Lines"
+msgstr "خطوط مخطط البطاقة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__name
+#, fuzzy
+msgid "Card Type"
+msgstr "نوع البطاقة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.xml:0
+#, fuzzy
+msgid "Close Register"
+msgstr "إغلاق التسجيل"
+
+#. module: easypay_pos
+#: model:ir.model,name:easypay_pos.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/payment_easypay.js:0
+#, fuzzy
+msgid "Confirmation "
+msgstr "التأكيد"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.xml:0
+#, fuzzy
+msgid "Connect"
+msgstr "الاتصال"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__easy_connection_type
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__easy_connection_type
+#, fuzzy
+msgid "Connection Default Type"
+msgstr "نوع الاتصال الافتراضي"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.js:0
+#, fuzzy
+msgid "Connection Error"
+msgstr "خطأ في الإتصال"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/screens/payment_screen/payment_lines/payment_lines.xml:0
+#, fuzzy
+msgid "Connection error"
+msgstr "خطأ بالاتصال"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__create_uid
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__create_uid
+#, fuzzy
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__create_date
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__create_date
+#, fuzzy
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__pos_credit_count
+#, fuzzy
+msgid "Credit Count"
+msgstr "رصيد النقاط"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__pos_credit_total
+#, fuzzy
+msgid "Credit Total"
+msgstr "مجموع الخصميات"
+
+#. module: easypay_pos
+#: model:ir.model,name:easypay_pos.model_daily_reconciliation
+#: model_terms:ir.ui.view,arch_db:easypay_pos.view_daily_reconciliation_form
+msgid "Daily Reconciliation"
+msgstr "الموازنة اليومية"
+
+#. module: easypay_pos
+#: model:ir.actions.act_window,name:easypay_pos.action_daily_reconciliation
+#: model:ir.ui.menu,name:easypay_pos.menu_daily_reconciliation
+#: model_terms:ir.ui.view,arch_db:easypay_pos.view_daily_reconciliation_list
+msgid "Daily Reconciliations"
+msgstr "الموازنات اليومية"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__date
+#, fuzzy
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__pos_debit_count
+#, fuzzy
+msgid "Debit Count"
+msgstr "عدد الخصوم"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__pos_debit_total
+#, fuzzy
+msgid "Debit Total"
+msgstr "إجمالي الخصم"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__easy_default_ip
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__easy_default_ip
+#, fuzzy
+msgid "Default IP"
+msgstr "عنوان IP الافتراضي"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/payment_easypay.js:0
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.js:0
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.js:0
+#, fuzzy
+msgid "Device not connected"
+msgstr "الجهاز غير متصل"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.xml:0
+#, fuzzy
+msgid "Discard"
+msgstr "تجاهل"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.xml:0
+#, fuzzy
+msgid "Disconnect"
+msgstr "قطع الاتصال"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__display_name
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__display_name
+#, fuzzy
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.js:0
+#, fuzzy
+msgid "Do you want to print using the web printer?"
+msgstr "هل تريد الطباعة باستخدام طابعة الويب؟"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.xml:0
+#: model_terms:ir.ui.view,arch_db:easypay_pos.pos_config_view_form_inherited
+#, fuzzy
+msgid "Easypay"
+msgstr "إيزي باي"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/payment_easypay.js:0
+#, fuzzy
+msgid "Easypay Error"
+msgstr "خطأ في Easypay"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment_method__easypay_terminalid
+#, fuzzy
+msgid "Easypay Terminal ID"
+msgstr "معرّف محطة Easypay الطرفية"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__enable_auto_print_payment_transaction
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__enable_auto_print_payment_transaction
+#, fuzzy
+msgid "Enable Auto Print Payment Transaction Receipt"
+msgstr "تمكين الطباعة التلقائية لإيصال معاملة الدفع"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__easy_auto_validate
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__easy_auto_validate
+#, fuzzy
+msgid "Enable Auto Validate"
+msgstr "تمكين التحقق التلقائي"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__easy_force_done
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__easy_force_done
+#, fuzzy
+msgid "Enable Force Done"
+msgstr "تمكين القوة تم التمكين"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.js:0
+#, fuzzy
+msgid "Error"
+msgstr "خطأ "
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.js:0
+#, fuzzy
+msgid "Error during reconciliation"
+msgstr "خطأ أثناء التسوية"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.js:0
+msgid "Error saving reconciliation."
+msgstr "خطأ في حفظ الموازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/screens/payment_screen/payment_lines/payment_lines.xml:0
+#, fuzzy
+msgid "Force Done"
+msgstr "فرض تم"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/screens/payment_screen/payment_lines/payment_lines.xml:0
+#, fuzzy
+msgid "Force done"
+msgstr "فرض تم"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.xml:0
+msgid "Get Last Reconcile"
+msgstr "احصل على آخر موازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.xml:0
+msgid "Get Last Reconciliation"
+msgstr "احصل على آخر موازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/screens/payment_screen/payment_lines/payment_lines.xml:0
+#, fuzzy
+msgid "Get Last Transaction"
+msgstr "الحصول على آخر معاملة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.xml:0
+#, fuzzy
+msgid "Get last reconciliation"
+msgstr "احصل على آخر مصالحة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__total_total
+#, fuzzy
+msgid "Grand Total"
+msgstr "المجموع الكلي"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__id
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__id
+#, fuzzy
+msgid "ID"
+msgstr "المعرف"
+
+#. module: easypay_pos
+#: model:ir.model.fields,help:easypay_pos.field_pos_config__mandatory_reconciliation
+#: model:ir.model.fields,help:easypay_pos.field_res_config_settings__mandatory_reconciliation
+#, fuzzy
+msgid "If enabled, the session cannot be closed until reconciliation is completed."
+msgstr "في حالة التمكين، لا يمكن إغلاق الجلسة حتى تكتمل التسوية."
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.xml:0
+#, fuzzy
+msgid "Ip Address"
+msgstr "عنوان Ip"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.xml:0
+#, fuzzy
+msgid "Ip:"
+msgstr "آي بي"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__is_easypay
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__is_easypay
+#, fuzzy
+msgid "Is Easypay"
+msgstr "هل Easypay"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__write_uid
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__write_uid
+#, fuzzy
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__write_date
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__write_date
+#, fuzzy
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__mandatory_reconciliation
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__mandatory_reconciliation
+msgid "Mandatory Reconciliation for Session Closure"
+msgstr "الموازنة إلزامية لقفل الجلسة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__merchant_id
+#, fuzzy
+msgid "Merchant"
+msgstr "التاجر"
+
+#. module: easypay_pos
+#: model:ir.model.fields.selection,name:easypay_pos.selection__pos_config__easy_connection_type__not_secure
+#, fuzzy
+msgid "Not Secure"
+msgstr "غير آمن"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__note
+#: model_terms:ir.ui.view,arch_db:easypay_pos.view_daily_reconciliation_form
+#, fuzzy
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/screens/payment_screen/payment_lines/payment_lines.xml:0
+#, fuzzy
+msgid "Payment request pending"
+msgstr "طلب الدفع متوقف"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.xml:0
+msgid "Perform reconciliation"
+msgstr "إجراء الموازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.xml:0
+#, fuzzy
+msgid ""
+"Please enter the information you are getting from Easypay to connect with the device"
+msgstr "يُرجى إدخال المعلومات التي تحصل عليها من Easypay للاتصال بالجهاز"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.js:0
+#, fuzzy
+msgid "Please wait a second we trying to connote the device"
+msgstr "من فضلك انتظر لحظة نحن نحاول أن ندل على الجهاز"
+
+#. module: easypay_pos
+#: model:ir.model,name:easypay_pos.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "تهيئة نقطة البيع "
+
+#. module: easypay_pos
+#: model:ir.model,name:easypay_pos.model_pos_payment_method
+msgid "Point of Sale Payment Methods"
+msgstr "طرق الدفع في نقطة البيع "
+
+#. module: easypay_pos
+#: model:ir.model,name:easypay_pos.model_pos_payment
+msgid "Point of Sale Payments"
+msgstr "مدفوعات نقطة البيع "
+
+#. module: easypay_pos
+#: model:ir.model,name:easypay_pos.model_pos_session
+msgid "Point of Sale Session"
+msgstr "جلسة نقطة البيع"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.xml:0
+#, fuzzy
+msgid "Port"
+msgstr "منفذ"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.xml:0
+#, fuzzy
+msgid "Port:"
+msgstr "المنفذ:"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__print_order_receipt
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__print_order_receipt
+#, fuzzy
+msgid "Print Order Receipt in Terminal Printer"
+msgstr "طباعة إيصال الطلب في الطابعة الطرفية"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/receipt_screen/print_reconciliation_receipt_screen.xml:0
+#, fuzzy
+msgid "Print Receipt"
+msgstr "طباعة الإيصال"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/receipt_screen/print_reconciliation_receipt_screen.js:0
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.js:0
+#: code:addons/easypay_pos/static/src/overrides/components/screens/payment_screen/payment_screen.js:0
+#, fuzzy
+msgid "Printing error"
+msgstr "خطأ في الطباعة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__purchase_count
+#, fuzzy
+msgid "Purchase Count"
+msgstr "عدد المشتريات"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__purchase_reversal_count
+#, fuzzy
+msgid "Purchase Reversal Count"
+msgstr "عدد عمليات الشراء العكسي"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__purchase_reversal_total
+#, fuzzy
+msgid "Purchase Reversal Total"
+msgstr "إجمالي إعادة الشراء"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__purchase_total
+#, fuzzy
+msgid "Purchase Total"
+msgstr "إجمالي المشتريات"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__qr_code
+#, fuzzy
+msgid "QR Code"
+msgstr "كود QR"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__receipt_url
+#, fuzzy
+msgid "Receipt URL"
+msgstr "عنوان URL الإيصال"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.xml:0
+msgid "Reconcile"
+msgstr "موازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.xml:0
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__balance_id
+msgid "Reconciliation"
+msgstr "الموازنة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__is_balanced
+msgid "Reconciliation Completed"
+msgstr "اكتملت الموازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.js:0
+msgid "Reconciliation Required"
+msgstr "الموازنة مطلوبة"
+
+#. module: easypay_pos
+#: model:ir.model,name:easypay_pos.model_daily_reconciliation_scheme
+msgid "Reconciliation Scheme Line"
+msgstr "خط مخطط الموازنة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_session__total_reconciliation_amount
+msgid "Reconciliation Total"
+msgstr "مجموع الموازنات"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.xml:0
+msgid "Reconciliation completed"
+msgstr "اكتملت الموازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.js:0
+msgid "Reconciliation failed"
+msgstr "فشلت الموازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.js:0
+msgid "Reconciliation not completed"
+msgstr "لم تكتمل الموازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.xml:0
+msgid "Reconciliation pending"
+msgstr "الموازنة معلقة"
+
+#. module: easypay_pos
+#: model_terms:ir.ui.view,arch_db:easypay_pos.view_pos_session_inherit_daily_reconciliation_button
+msgid "Reconciliations"
+msgstr "الموازنات"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__name
+#, fuzzy
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__refund_count
+#, fuzzy
+msgid "Refund Count"
+msgstr "عدد المبالغ المستردة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__refund_reversal_count
+#, fuzzy
+msgid "Refund Reversal Count"
+msgstr "عدد مرات استرداد الأموال المستردة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__refund_reversal_total
+#, fuzzy
+msgid "Refund Reversal Total"
+msgstr "مجموع المبالغ المستردة المستردة المستردة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__refund_total
+#, fuzzy
+msgid "Refund Total"
+msgstr "إجمالي المبلغ المسترد"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/screens/payment_screen/payment_lines/payment_lines.xml:0
+#, fuzzy
+msgid "Retry"
+msgstr "إعادة المحاولة"
+
+#. module: easypay_pos
+#: model:ir.model.fields.selection,name:easypay_pos.selection__pos_config__easy_connection_type__secure
+#, fuzzy
+msgid "Secure"
+msgstr "استخدم كلمة مرور آمنة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/screens/payment_screen/payment_lines/payment_lines.xml:0
+#, fuzzy
+msgid "Send"
+msgstr "إرسال"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/screens/payment_screen/payment_lines/payment_lines.xml:0
+#, fuzzy
+msgid "Send Payment Request"
+msgstr "إرسال طلب الدفع"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__session_id
+#, fuzzy
+msgid "Session"
+msgstr "الجلسة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__terminal_id
+#, fuzzy
+msgid "Terminal ID"
+msgstr "معرف الطرفية"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__pos_total_total
+#, fuzzy
+msgid "Total"
+msgstr "المجموع"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__total_count
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation_scheme__pos_total_count
+#, fuzzy
+msgid "Total Count"
+msgstr "الإجمالي"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.xml:0
+msgid "Total Reconciled Amount:"
+msgstr "إجمالي مبلغ الموازنة:"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/screens/payment_screen/payment_lines/payment_lines.xml:0
+msgid "Transaction cancelled"
+msgstr "المعاملة ملغاة"
+
+#. module: easypay_pos
+#: model:ir.model.fields,help:easypay_pos.field_pos_payment__receipt_url
+#, fuzzy
+msgid "URL link to the payment receipt"
+msgstr "رابط URL لإيصال الدفع"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_daily_reconciliation__user_id
+#, fuzzy
+msgid "User"
+msgstr "المستخدم"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.xml:0
+#, fuzzy
+msgid "Wireless"
+msgstr "لاسلكي"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/closing_popup.js:0
+msgid "You must perform reconciliation before closing the session."
+msgstr "يجب إجراء الموازنة قبل إغلاق الجلسة."
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.xml:0
+msgid "localhost"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/payment_easypay.js:0
+#, fuzzy
+msgid "make sure the device connected and can be reached"
+msgstr "تأكد من أن الجهاز متصل ويمكن الوصول إليه"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.js:0
+#, fuzzy
+msgid "make sure the device connected and can be reached %s"
+msgstr "تأكد من أن الجهاز متصل ويمكن الوصول إليه %s"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.js:0
+#, fuzzy
+msgid "make sure the device connected and can be reached at %s"
+msgstr "تأكد من أن الجهاز متصل ويمكن الوصول إليه على %s"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.js:0
+#, fuzzy
+msgid ""
+"make sure the device connected and can be reached at %s \n"
+" or try to open https://%s:9000 on new tab and select advanced and allow to process to it"
+msgstr ""
+"تأكد من أن الجهاز متصل ويمكن الوصول إليه على %s\n"
+" أو حاول أن تفتح https://%s:9000 في علامة تبويب جديدة واختر متقدم واسمح بالمعالجة إليه"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/overrides/components/navbar/navbar.xml:0
+msgid "powered by"
+msgstr "تم بواسطة"
