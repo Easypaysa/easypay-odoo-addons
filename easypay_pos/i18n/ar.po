@@ -4,45 +4,62 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-16 04:01+0000\n"
-"PO-Revision-Date: 2023-08-16 07:06+0300\n"
+"POT-Creation-Date: 2025-11-03 14:26+0000\n"
+"PO-Revision-Date: 2025-11-03 17:28+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 3.3.2\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && "
+"n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.7\n"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/js/payments.js:0
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "%s\n"
 " %s"
 msgstr ""
-"%s\n"
-" %s"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/xml/ReconciliationReceipt.xml:0
+#, python-format
+msgid "*** END OF RECONCILIATION ***"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/xml/ReconciliationReceipt.xml:0
+#, python-format
+msgid "*** نهاية الموازنة ***"
+msgstr ""
 
 #. module: easypay_pos
 #: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__amount_authorized
-#, fuzzy
 msgid "Amount Authorized"
 msgstr "المبلغ المصرح به"
 
 #. module: easypay_pos
 #: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__approval_code
-#, fuzzy
 msgid "Approval Code"
 msgstr "رمز الموافقه"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#, python-format
+msgid "Are you sure you want to use the last transaction? with amount %s"
+msgstr "هل أنت متأكد من أنك تريد استخدام المعاملة الأخيرة؟ بالمبلغ %s"
+
+#. module: easypay_pos
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/js/payments.js:0
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
@@ -50,14 +67,14 @@ msgid "Cancel"
 msgstr "إلغاء"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Cancel Payment Request"
 msgstr "إلغاء طلب الدفع"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/js/payments.js:0
 #, python-format
 msgid "Cannot process transactions with negative amount."
@@ -69,41 +86,86 @@ msgid "Card Name"
 msgstr "رقم البطاقة"
 
 #. module: easypay_pos
-#. openerp-web
+#: model:ir.model,name:easypay_pos.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#, python-format
+msgid "Confirmation"
+msgstr "تأكيد"
+
+#. module: easypay_pos
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
 #, python-format
 msgid "Connect"
 msgstr "اتصال"
 
 #. module: easypay_pos
-#. openerp-web
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__easy_connection_type
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__easy_connection_type
+msgid "Connection Default Type"
+msgstr "نوع الاتصال الافتراضي"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/Popups/ClosePosPopup.js:0
+#, python-format
+msgid "Connection Error"
+msgstr "خطأ في الإتصال"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__easy_default_ip
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__easy_default_ip
+msgid "Default IP"
+msgstr "عنوان IP الافتراضي"
+
+#. module: easypay_pos
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/js/payments.js:0
-#, fuzzy, python-format
+#, python-format
 msgid "Device error"
 msgstr "خطأ في الجهاز"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/js/Chrome.js:0
+#: code:addons/easypay_pos/static/src/js/Popups/ClosePosPopup.js:0
 #: code:addons/easypay_pos/static/src/js/payments.js:0
-#, fuzzy, python-format
+#, python-format
 msgid "Device not connected"
 msgstr "الجهاز غير متصل"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
 #, python-format
 msgid "Disconnect"
 msgstr "قطع الاتصال"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/Popups/ClosePosPopup.js:0
+#, python-format
+msgid "Do you want to print using the web printer?"
+msgstr "هل تريد الطباعة باستخدام طابعة الويب؟"
+
+#. module: easypay_pos
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
 #, python-format
 msgid "Easypay"
 msgstr ""
 
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#, python-format
+msgid "Easypay Error"
+msgstr "خطأ في Easypay"
 
 #. module: easypay_pos
 #: model:ir.model.fields,field_description:easypay_pos.field_pos_payment_method__easypay_teminalid
@@ -112,49 +174,129 @@ msgstr ""
 
 #. module: easypay_pos
 #: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__easypay_terminalid
-#, fuzzy
 msgid "Easypay Terminalid"
-msgstr "Easypay Terminalid"
-
+msgstr ""
 
 #. module: easypay_pos
-#. openerp-web
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__enable_auto_print_payment_transaction
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__enable_auto_print_payment_transaction
+msgid "Enable Auto Print Payment Transaction Receipt"
+msgstr "تمكين الطباعة التلقائية لإيصال معاملة الدفع"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__easy_auto_validate
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__easy_auto_validate
+msgid "Enable Auto Validate"
+msgstr "تمكين التحقق التلقائي"
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__easy_force_done
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__easy_force_done
+msgid "Enable Force Done"
+msgstr ""
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__entry_mode
+msgid "Entry Mode"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/Popups/ClosePosPopup.js:0
+#, python-format
+msgid "Error"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/Popups/ClosePosPopup.js:0
+#, python-format
+msgid "Error during reconciliation"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/Popups/ClosePosPopup.js:0
+#, python-format
+msgid "Failed to print reconciliation receipt: %s"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Force Done"
 msgstr " تم يدوي"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Force done"
 msgstr " تم يدوي"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
+#, python-format
+msgid "Get Last Transaction"
+msgstr "الحصول على آخر معاملة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/xml/ReconciliationReceipt.xml:0
+#, python-format
+msgid "Host:"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
 #, python-format
 msgid "Ip Address"
 msgstr "عنوان Ip"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
 #, python-format
 msgid "Ip:"
 msgstr "عنوان Ip"
 
 #. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_config__is_easypay
+#: model:ir.model.fields,field_description:easypay_pos.field_res_config_settings__is_easypay
+msgid "Is Easypay"
+msgstr ""
+
+#. module: easypay_pos
 #: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__merchant
-#, fuzzy
 msgid "Merchant"
-msgstr "تاجر"
+msgstr "التاجر"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#, python-format
+msgid "No"
+msgstr ""
+
+#. module: easypay_pos
+#: model:ir.model.fields.selection,name:easypay_pos.selection__pos_config__easy_connection_type__not_secure
+msgid "Not Secure"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/xml/ReconciliationReceipt.xml:0
+#, python-format
+msgid "POS:"
+msgstr ""
 
 #. module: easypay_pos
 #: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__pan
 msgid "Pan"
-msgstr "Pan"
+msgstr ""
 
 #. module: easypay_pos
 #: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__payment_log
@@ -162,68 +304,151 @@ msgid "Payment Log"
 msgstr "سجل الدفع"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Payment Successful"
 msgstr "تم الدفع بنجاح"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/xml/OrderReceipt.xml:0
+#, python-format
+msgid "Payment made by Easypay"
+msgstr "الدفع عن طريق Easypay"
+
+#. module: easypay_pos
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Payment request pending"
 msgstr "طلب الدفع متوقف"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Payment reversed"
 msgstr "ارجاع"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/xml/ClosePosPopup.xml:0
+#, python-format
+msgid "Perform reconciliation"
+msgstr "إجراء الموازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
 #, python-format
 msgid ""
-"Please enter the information you are getting from Easypay to "
-"connect with the device"
-msgstr ""
-"الرجاء إدخال المعلومات التي تحصل عليها من تطبيق Easypay للاتصال بالجهاز"
+"Please enter the information you are getting from Easypay to connect with the device"
+msgstr "الرجاء إدخال المعلومات التي تحصل عليها من تطبيق Easypay للاتصال بالجهاز"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/js/Chrome.js:0
 #, python-format
 msgid "Please wait a second we trying to connote the device"
 msgstr "من فضلك انتظر ثانية نحاول أن نتصل بالجهاز"
 
+#. module: easypay_pos
+#: model:ir.model,name:easypay_pos.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "تهيئة نقطة البيع "
 
 #. module: easypay_pos
-#. openerp-web
+#: model:ir.model,name:easypay_pos.model_pos_payment_method
+msgid "Point of Sale Payment Methods"
+msgstr "طرق الدفع في نقطة البيع "
+
+#. module: easypay_pos
+#: model:ir.model,name:easypay_pos.model_pos_payment
+msgid "Point of Sale Payments"
+msgstr "مدفوعات نقطة البيع "
+
+#. module: easypay_pos
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
 #, python-format
 msgid "Port"
 msgstr "منفذ"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
 #, python-format
 msgid "Port:"
 msgstr "المنفذ:"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Print"
 msgstr "طباعة"
 
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/Popups/ClosePosPopup.js:0
+#, python-format
+msgid "Printing Error"
+msgstr ""
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/Popups/ClosePosPopup.js:0
+#, python-format
+msgid "Printing error"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/Screens/PaymentScreen.js:0
+#, python-format
+msgid "Printing is not supported on some browsers"
+msgstr "الطباعة غير مدعومة في بعض المتصفحات"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/Screens/PaymentScreen.js:0
+#, python-format
+msgid ""
+"Printing is not supported on some browsers due to no default printing protocol is "
+"available. It is possible to print your tickets by making use of an IoT Box."
+msgstr ""
+"الطباعة غير مدعومة في بعض المتصفحات نظراً لعدم وجود بروتوكول طباعة افتراضي فيها. بمقدورك "
+"طباعة تذاكرك عن طريق الاستفادة من جهاز IoT."
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__receipt_url
+msgid "Receipt URL"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/xml/ClosePosPopup.xml:0
+#, python-format
+msgid "Reconciliation"
+msgstr "الموازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/Popups/ClosePosPopup.js:0
+#, python-format
+msgid "Reconciliation failed"
+msgstr "فشلت الموازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/Popups/ClosePosPopup.js:0
+#, python-format
+msgid "Reconciliation not completed"
+msgstr "لم تكتمل الموازنة"
+
+#. module: easypay_pos
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Request sent"
@@ -231,12 +456,11 @@ msgstr "تم ارسال الطلب"
 
 #. module: easypay_pos
 #: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__retrieval_reference_number
-#, fuzzy
 msgid "Retrieval Reference Number"
 msgstr "الرقم المرجعي للاسترجاع"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/js/payments.js:0
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
@@ -244,87 +468,149 @@ msgid "Retry"
 msgstr "إعادة المحاولة"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Reversal request sent to terminal"
 msgstr "تم إرسال طلب الإلغاء إلى الطرفية"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Reverse"
 msgstr "عكسي"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Reverse Payment"
 msgstr "الدفع العكسي"
 
 #. module: easypay_pos
-#. openerp-web
+#: model:ir.model.fields.selection,name:easypay_pos.selection__pos_config__easy_connection_type__secure
+msgid "Secure"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Send"
 msgstr "إرسال"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Send Payment Request"
 msgstr "إرسال طلب الدفع"
 
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__signature_required
+msgid "Signature Required"
+msgstr ""
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Transaction cancelled"
 msgstr "المعاملة ملغاة"
 
 #. module: easypay_pos
-#. openerp-web
+#: model:ir.model.fields,help:easypay_pos.field_pos_payment__receipt_url
+msgid "URL link to the payment receipt"
+msgstr ""
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__udid
+msgid "Udid"
+msgstr ""
+
+#. module: easypay_pos
+#: model:ir.model.fields,field_description:easypay_pos.field_pos_payment__use_payment_terminal
+msgid "Use Payment Terminal"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/PaymentScreenElectronicPayment.xml:0
 #, python-format
 msgid "Waiting for card"
 msgstr "في انتظار البطاقة"
 
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
+#, python-format
+msgid "Wireless"
+msgstr ""
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/js/payments.js:0
-#, fuzzy, python-format
+#, python-format
+msgid "Yes"
+msgstr "نعم"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/xml/OrderReceipt.xml:0
+#, python-format
+msgid "easypay.sa"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
+#, python-format
+msgid "localhost"
+msgstr ""
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/payments.js:0
+#, python-format
 msgid "make sure the device connected and can be reached"
 msgstr "تأكد من توصيل الجهاز ويمكن الوصول إليه"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/js/Chrome.js:0
-#, fuzzy, python-format
+#, python-format
 msgid "make sure the device connected and can be reached %s"
 msgstr "تأكد من توصيل الجهاز وإمكانية الوصول إليه %s"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/js/Chrome.js:0
-#, fuzzy, python-format
+#, python-format
 msgid "make sure the device connected and can be reached at %s"
 msgstr "تأكد من توصيل الجهاز وأنه يمكن الوصول إليه على %s"
 
 #. module: easypay_pos
-#. openerp-web
-#: code:addons/easypay_pos/static/src/js/payments.js:0
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/js/Chrome.js:0
 #, python-format
-msgid "ok"
-msgstr "موافق"
+msgid ""
+"make sure the device connected and can be reached at %s \n"
+" or try to open https://%s:9000 on new tab and select advanced and allow to process to it"
+msgstr ""
+"تأكد من أن الجهاز متصل ويمكن الوصول إليه على %s\n"
+" أو حاول أن تفتح https://%s:9000 في علامة تبويب جديدة واختر متقدم واسمح بالمعالجة إليه"
 
 #. module: easypay_pos
-#. openerp-web
+#. odoo-javascript
 #: code:addons/easypay_pos/static/src/xml/Chrome.xml:0
 #, python-format
 msgid "powered by"
 msgstr "تم بواسطة"
+
+#. module: easypay_pos
+#. odoo-javascript
+#: code:addons/easypay_pos/static/src/xml/OrderReceipt.xml:0
+#, python-format
+msgid "تم الدفع بواسطة تطبيق إيزي باي"
+msgstr ""

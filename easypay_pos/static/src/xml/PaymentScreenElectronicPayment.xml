@@ -10,6 +10,11 @@
                 <div class="button send_payment_request highlight" title="Send Payment Request" t-on-click="() => this.trigger('send-payment-request', line)">
                     Send
                 </div>
+                <t t-if="line.payment_method.use_payment_terminal == 'easypay'">
+                    <div class="button send_payment_request highlight" title="Get Last Transaction" t-on-click="() => this.trigger('get-last-transaction', line)">
+                        Get Last Transaction
+                    </div>
+                </t>
             </t>
             <t t-elif="line.payment_status == 'retry'">
                 <div style="line-height:30px; align-self:center;">
@@ -18,6 +23,11 @@
                 <div class="button send_payment_request highlight" title="Send Payment Request" t-on-click="() => this.trigger('send-payment-request', line)">
                     Retry
                 </div>
+                <t t-if="line.payment_method.use_payment_terminal == 'easypay'">
+                    <div class="button send_payment_request highlight" title="Get Last Transaction" t-on-click="() => this.trigger('get-last-transaction', line)">
+                        Get Last Transaction
+                    </div>
+                </t>
             </t>
             <t t-if="line.payment_status == 'retry'">
                 <t t-if="env.pos.config.easy_force_done">
@@ -36,6 +46,11 @@
                 <div class="button send_payment_cancel" title="Cancel Payment Request" t-on-click="() => this.trigger('send-payment-cancel', line)">
                     Cancel
                 </div>
+                <t t-if="line.payment_method.use_payment_terminal == 'easypay'">
+                    <div class="button send_payment_request highlight" title="Get Last Transaction" t-on-click="() => this.trigger('get-last-transaction', line)">
+                        Get Last Transaction
+                    </div>
+                </t>
             </t>
             <t t-elif="['waiting', 'waitingCancel'].includes(line.payment_status)">
                 <div>

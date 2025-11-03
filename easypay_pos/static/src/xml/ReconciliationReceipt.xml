@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="ReconciliationReceipt" owl="1">
+        <div class="pos-receipt">
+            <!-- Header with Merchant Info -->
+            <div class="pos-receipt-center-align">
+                <h2><t t-esc="merchant.name.english" /></h2>
+                <div><t t-esc="merchant.name.arabic" /></div>
+                <div><t t-esc="merchant.address.english" /></div>
+                <div><t t-esc="merchant.address.arabic" /></div>
+            </div>
+            
+            <br/>
+            
+            <!-- Date and Time -->
+            <div class="pos-receipt-order-data">
+                <div><t t-esc="date" />  <t t-esc="time" /></div>
+            </div>
+            
+            <!-- Terminal Info -->
+            <div class="pos-receipt-order-data">
+                <div><t t-esc="merchant.id" />  <t t-esc="card_acceptor_terminal_id" /></div>
+            </div>
+            <div class="pos-receipt-order-data">
+                <div><t t-esc="merchant.category_code" />  <t t-esc="system_trace_audit_number" />  <t t-esc="pos_software_version_number" /></div>
+            </div>
+            
+            <br/>
+            <div>------------------------</div>
+            <br/>
+            
+            <!-- Reconciliation Status -->
+            <div class="pos-receipt-center-align">
+                <strong><t t-esc="is_balanced.label.english" /></strong>
+                <br/>
+                <strong><t t-esc="is_balanced.label.arabic" /></strong>
+            </div>
+            
+            <br/>
+            
+            <!-- Transaction Details Summary -->
+            <t t-if="details">
+                <div>
+                    <t t-esc="details.purchase.label.english" /> / <t t-esc="details.purchase.label.arabic" />
+                    <span class="pos-receipt-right-align">
+                        <t t-esc="details.purchase.count" /> - <t t-esc="details.purchase.total" /> <t t-esc="currency.english" />
+                    </span>
+                </div>
+                <div>
+                    <t t-esc="details.refund.label.english" /> / <t t-esc="details.refund.label.arabic" />
+                    <span class="pos-receipt-right-align">
+                        <t t-esc="details.refund.count" /> - <t t-esc="details.refund.total" /> <t t-esc="currency.english" />
+                    </span>
+                </div>
+                <br/>
+                <div>
+                    <strong><t t-esc="details.total.label.english" /> / <t t-esc="details.total.label.arabic" /></strong>
+                    <span class="pos-receipt-right-align">
+                        <strong><t t-esc="details.total.count" /> - <t t-esc="details.total.total" /> <t t-esc="currency.english" /></strong>
+                    </span>
+                </div>
+            </t>
+            
+            <br/>
+            <div>------------------------</div>
+            <br/>
+            
+            <!-- Card Schemes Details - Only show schemes with transactions -->
+            <t t-foreach="schemes" t-as="scheme" t-key="scheme_index">
+                <!-- Only display scheme if it has transactions (either POS or Host) -->
+                <t t-if="scheme.pos.total.count > 0 or scheme.host.total.count > 0">
+                    <div class="pos-receipt-center-align">
+                        <strong><t t-esc="scheme.name.label.english" /> / <t t-esc="scheme.name.label.arabic" /></strong>
+                    </div>
+                    
+                    <!-- POS Totals - Only show if has transactions -->
+                    <t t-if="scheme.pos.total.count > 0">
+                        <div class="pos-receipt-left-padding">
+                            <strong>POS:</strong>
+                        </div>
+                        <div class="pos-receipt-left-padding">
+                            <t t-esc="scheme.pos.debit.label.english" />
+                            <span class="pos-receipt-right-align">
+                                <t t-esc="scheme.pos.debit.count" /> - <t t-esc="scheme.pos.debit.total" /> <t t-esc="currency.english" />
+                            </span>
+                        </div>
+                        <div class="pos-receipt-left-padding">
+                            <t t-esc="scheme.pos.credit.label.english" />
+                            <span class="pos-receipt-right-align">
+                                <t t-esc="scheme.pos.credit.count" /> - <t t-esc="scheme.pos.credit.total" /> <t t-esc="currency.english" />
+                            </span>
+                        </div>
+                        <div class="pos-receipt-left-padding">
+                            <strong><t t-esc="scheme.pos.total.label.english" /></strong>
+                            <span class="pos-receipt-right-align">
+                                <strong><t t-esc="scheme.pos.total.count" /> - <t t-esc="scheme.pos.total.total" /> <t t-esc="currency.english" /></strong>
+                            </span>
+                        </div>
+                    </t>
+                    
+                    <!-- Host Totals - Only show if has transactions -->
+                    <t t-if="scheme.host.total.count > 0">
+                        <div class="pos-receipt-left-padding">
+                            <strong>Host:</strong>
+                        </div>
+                        <div class="pos-receipt-left-padding">
+                            <t t-esc="scheme.host.debit.label.english" />
+                            <span class="pos-receipt-right-align">
+                                <t t-esc="scheme.host.debit.count" /> - <t t-esc="scheme.host.debit.total" /> <t t-esc="currency.english" />
+                            </span>
+                        </div>
+                        <div class="pos-receipt-left-padding">
+                            <t t-esc="scheme.host.credit.label.english" />
+                            <span class="pos-receipt-right-align">
+                                <t t-esc="scheme.host.credit.count" /> - <t t-esc="scheme.host.credit.total" /> <t t-esc="currency.english" />
+                            </span>
+                        </div>
+                        <div class="pos-receipt-left-padding">
+                            <strong><t t-esc="scheme.host.total.label.english" /></strong>
+                            <span class="pos-receipt-right-align">
+                                <strong><t t-esc="scheme.host.total.count" /> - <t t-esc="scheme.host.total.total" /> <t t-esc="currency.english" /></strong>
+                            </span>
+                        </div>
+                    </t>
+                    
+                    <br/>
+                </t>
+            </t>
+            
+            <div>------------------------</div>
+            <br/>
+            
+            <!-- Footer -->
+            <div class="pos-receipt-center-align">
+                <strong>*** END OF RECONCILIATION ***</strong>
+            </div>
+            <div class="pos-receipt-center-align">
+                <strong>*** نهاية الموازنة ***</strong>
+            </div>
+            
+            <br/>
+        </div>
+    </t>
+
+</templates>

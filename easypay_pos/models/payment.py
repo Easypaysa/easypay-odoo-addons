@@ -15,6 +15,7 @@ class Payment(models.Model):
     merchant = fields.Float()
     amount_authorized = fields.Text()
     payment_log = fields.Char()
+    receipt_url = fields.Char(string='Receipt URL', help='URL link to the payment receipt')
     use_payment_terminal = fields.Char(compute="_compute_payment_terminal",
                                        store=True)
 
@@ -38,6 +39,7 @@ class Payment(models.Model):
             card_name=payment.card_name,
             merchant=payment.merchant,
             signature_required=payment.signature_required,
-            amount_authorized=payment.amount_authorized
+            amount_authorized=payment.amount_authorized,
+            receipt_url=payment.receipt_url
         )
         return result

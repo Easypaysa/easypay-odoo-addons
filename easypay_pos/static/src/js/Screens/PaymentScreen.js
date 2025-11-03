@@ -15,6 +15,7 @@ odoo.define('easypay_pos.PaymentScreen', function (require) {
             setup() {
                 super.setup();
                 useListener('print-last-result', this._PrintLastResult);
+                useListener('get-last-transaction', this._getLastTransaction);
                 var payment_lines = this.currentOrder.get_paymentlines();
                 for (var i = 0; i < payment_lines.length; i++) {
                     if (payment_lines[i].get_payment_status() !== "done")
@@ -70,6 +71,51 @@ odoo.define('easypay_pos.PaymentScreen', function (require) {
                 }
             }
 
+            async _getLastTransaction({detail: line}) {
+                this.paymentLines.forEach(function (line) {
+                    line.can_be_reversed = false;
+                });
+
+                const payment_terminal = line.payment_method.payment_terminal;
+                if (line.payment_method.use_payment_terminal !== 'easypay') {
+                    return super._sendPaymentRequest({detail: line})
+                }
+
+                // await this._CustomerDisplayReceipt();
+
+                line.set_payment_status('waitingCard');
+                // framework.blockUI();
+                if (line.amount < 0 && line.amount != 0) {
+                    var isPaymentSuccessful = await payment_terminal.send_payment_reversal(line.cid);
+                } else {
+                    var isPaymentSuccessful = await payment_terminal.get_last_transaction_request(line.cid);
+                }
+
+                if (isPaymentSuccessful && line.get_payment_status() == 'done') {
+                    this.env.pos.udid = ''
+                    // line.can_be_reversed = payment_terminal.supports_reversals;
+                    if (!window.PrintImage && this.env.pos.config.enable_auto_print_payment_transaction) {
+                        await this._PrintLastResult();
+                    }
+                    if (this.env.pos.config.easy_auto_validate) {
+                        this.validateOrder();
+                    }
+                } else if (isPaymentSuccessful && line.get_payment_status() !== 'done') {
+                    var thiswait = true;
+                    while (thiswait) {
+                        if (['retry', 'done', 'cancel'].includes(line.get_payment_status())) thiswait = false;
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+                    }
+                    if (line.get_payment_status() == 'done') {
+                        // line.can_be_reversed = payment_terminal.supports_reversals;
+                    }
+                } else {
+                    line.set_payment_status('retry');
+                }
+                this.to_print = true;
+                framework.unblockUI();
+                this.render();
+            }
 
             async _sendPaymentRequest({detail: line}) {
                 // Other payment lines can not be reversed anymore

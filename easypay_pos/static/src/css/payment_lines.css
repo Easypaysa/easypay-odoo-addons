@@ -1,0 +1,222 @@
+/* Enhanced Payment Lines Button Styling for Odoo 16 */
+
+/* Payment line container styling */
+.paymentlines .paymentline.electronic_payment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    min-height: 60px;
+    gap: 12px;
+}
+
+/* Status text styling */
+.paymentlines .paymentline.electronic_payment > div[style*="line-height:30px"] {
+    flex: 1;
+    font-weight: 500;
+    color: #495057;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+}
+
+/* Base button styling for all payment buttons */
+.paymentlines .paymentline.electronic_payment .button {
+    min-width: 90px;
+    max-width: 160px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid transparent;
+    margin-left: 8px;
+}
+
+/* Send/Retry button (highlight) */
+.paymentlines .paymentline.electronic_payment .button.send_payment_request.highlight {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.paymentlines .paymentline.electronic_payment .button.send_payment_request.highlight:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Get Last Transaction button - distinctive styling */
+.paymentlines .paymentline.electronic_payment .button.send_payment_request.highlight:nth-of-type(2) {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+.paymentlines .paymentline.electronic_payment .button.send_payment_request.highlight:nth-of-type(2):hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Cancel button */
+.paymentlines .paymentline.electronic_payment .button.send_payment_cancel {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+.paymentlines .paymentline.electronic_payment .button.send_payment_cancel:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Force Done button */
+.paymentlines .paymentline.electronic_payment .button.send_force_done {
+    background-color: #6c757d;
+    color: white;
+    border-color: #6c757d;
+}
+
+.paymentlines .paymentline.electronic_payment .button.send_force_done:hover {
+    background-color: #545b62;
+    border-color: #4e555b;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Print button (when payment is done) */
+.paymentlines .paymentline.electronic_payment .button.send_payment_request.highlight:first-of-type {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.paymentlines .paymentline.electronic_payment .button.send_payment_request.highlight:first-of-type:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Reverse button */
+.paymentlines .paymentline.electronic_payment .button.send_payment_reversal {
+    background-color: #ffc107;
+    color: #212529;
+    border-color: #ffc107;
+    font-weight: 600;
+}
+
+.paymentlines .paymentline.electronic_payment .button.send_payment_reversal:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Spinner icon styling */
+.paymentlines .paymentline.electronic_payment .fa-circle-o-notch.fa-spin {
+    font-size: 24px;
+    color: #007bff;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 767px) {
+    .paymentlines .paymentline.electronic_payment {
+        flex-wrap: wrap;
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .paymentlines .paymentline.electronic_payment > div[style*="line-height:30px"] {
+        flex-basis: 100%;
+        margin-right: 0;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+    
+    .paymentlines .paymentline.electronic_payment .button {
+        flex: 1 1 auto;
+        min-width: calc(50% - 8px);
+        max-width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Tablet responsive adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .paymentlines .paymentline.electronic_payment .button {
+        min-width: 80px;
+        max-width: 140px;
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+
+/* Small screens - stack buttons vertically */
+@media (max-width: 576px) {
+    .paymentlines .paymentline.electronic_payment {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    
+    .paymentlines .paymentline.electronic_payment > div[style*="line-height:30px"] {
+        margin-bottom: 4px;
+        text-align: center;
+        min-height: unset;
+    }
+    
+    .paymentlines .paymentline.electronic_payment .button {
+        width: 100%;
+        max-width: 100%;
+        min-width: unset;
+        margin-left: 0;
+    }
+}
+
+/* Button group wrapper for better layout */
+.paymentlines .paymentline.electronic_payment {
+    flex-wrap: wrap;
+}
+
+/* Ensure consistent spacing between buttons */
+.paymentlines .paymentline.electronic_payment .button + .button {
+    margin-left: 8px;
+}
+
+/* Active/Focus states */
+.paymentlines .paymentline.electronic_payment .button:active {
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.paymentlines .paymentline.electronic_payment .button:focus {
+    outline: 2px solid rgba(0, 123, 255, 0.5);
+    outline-offset: 2px;
+}
+
+/* Disabled button state */
+.paymentlines .paymentline.electronic_payment .button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.paymentlines .paymentline.electronic_payment .button:disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+

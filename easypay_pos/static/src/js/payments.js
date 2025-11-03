@@ -103,6 +103,47 @@ odoo.define('easypay_pos.payment', function (require) {
             // }
 
         },
+
+        async get_last_transaction_request(cid) {
+            if (this.pos.get_order().selected_paymentline.amount < 0 || this.pos.get_order().selected_paymentline.amount === 0) {
+                this._show_error(_t('Cannot process transactions with negative amount.'));
+
+                return Promise.resolve();
+            }
+            this.pos.get_order().selected_paymentline.set_payment_status('waitingCard');
+            if (window.inAppPurchase) {
+                this.pos.easyChannel = true;
+                return this._get_last_transaction();
+            }else {
+                if (await this.connect()) {
+                    return this._purchase_payment("GetLastTransaction");
+                }
+            }
+            return Promise.resolve();
+        },
+
+        async _get_last_transaction() {
+            const order = this.pos.get_order();
+            const line = order.selected_paymentline;
+            const args = [{
+                method: "getLastTransaction",
+            }];
+            this.pos.paymentProcessing = true
+            const pollResponse = await window.inAppPurchase.callHandler('inAppPurchase', ...args);;
+            this.pos.paymentProcessing = false
+            this._CustomerDisplayReceipt();
+            if (pollResponse === "false" || pollResponse === null) {
+                line.set_payment_status('retry');
+                return false;
+            }
+            this.pos.paymentDone = true
+            var result = JSON.parse(pollResponse);
+            this.pos.last_reuslt = result.qr_code
+            line.set_payment_status('done');
+            this._decode_response(result);
+            return true;
+        },
+
         _show_error: function (msg, title) {
             if (!title) {
                 title = _t('Easypay Error');
@@ -308,19 +349,26 @@ odoo.define('easypay_pos.payment', function (require) {
 
             // return new Promise(function (resolve, reject) {
             if (self.pos.socket && self.pos.socket.readyState === 1) {
-                var data = {
-                    "amount": Math.floor(amount * 100),
-                    "customerReferenceNumber": order.uid,
-                    "method": method
-                }
-                if (method === "REFUND") {
-                    if (!self.pos.udid) {
-                        if (pay_line) {
-                            pay_line.set_payment_status('retry');
-                        }
-                        rejectPromise();
+                var data = {};
+                if (method === "GetLastTransaction") {
+                    data = {
+                        "method": method
                     }
-                    data.transactionUuid = self.pos.udid
+                } else { 
+                     data = {
+                        "amount": Math.floor(amount * 100),
+                        "customerReferenceNumber": order.uid,
+                        "method": method
+                    }
+                    if (method === "REFUND") {
+                        if (!self.pos.udid) {
+                            if (pay_line) {
+                                pay_line.set_payment_status('retry');
+                            }
+                            rejectPromise();
+                        }
+                        data.transactionUuid = self.pos.udid
+                    }
                 }
                 framework.blockUI();
                 self.pos.socket.send(JSON.stringify(data));
@@ -382,11 +430,33 @@ odoo.define('easypay_pos.payment', function (require) {
                 if (data.message) {
                     var response = JSON.parse(data.message)
                     if (response.is_approved) {
+                        var amount_authorized = line.amount
+                        if (response.amount_authorized !== undefined) {
+                            amount_authorized = parseFloat(response.amount_authorized.value)
+                        } else if (response.transaction_amount !== undefined) {
+                            amount_authorized = parseFloat(response.transaction_amount) / 100
+                        }
+                        if (method === "GetLastTransaction") {
+                            framework.unblockUI();
+                            const {confirmed} = await Gui.showPopup('ConfirmPopup', {
+                                title: _t("Confirmation"),
+                                body: _.str.sprintf(_t('Are you sure you want to use the last transaction? with amount %s'), amount_authorized),
+                                confirmText: _t('Yes'),
+                                cancelText: _t('No'),
+                            });
+                            if (!confirmed) {
+                                self.pos.paymentProcessing = false
+                                rejectPromise();
+                                return;
+                            }
+                            framework.blockUI();
+                        }
                         self._CustomerDisplayReceipt();
                         line.set_payment_status('done');
                         self._decode_response(response);
                         self.pos.paymentProcessing = false
                         self.pos.paymentDone = true
+                        line.amount = amount_authorized
                         framework.unblockUI();
                         // self.pos.dataMessage = data.message;
                         self.pos.last_reuslt = response.qr_code

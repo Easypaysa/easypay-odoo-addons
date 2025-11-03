@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="ClosePosPopup" t-inherit="point_of_sale.ClosePosPopup" t-inherit-mode="extension" owl="1">
+
+        <!-- Add reconciliation buttons to the footer -->
+        <xpath expr="//footer[@class='footer']" position="inside">
+            <div t-if="env.pos.config.is_easypay" class="button highlight"
+                 t-on-click="() => this.onReconciliation('reconciliation')"
+                 title="Perform reconciliation">
+                <i class="fa fa-calculator"/>
+                Reconciliation
+            </div>
+        </xpath>
+    </t>
+
+</templates>
