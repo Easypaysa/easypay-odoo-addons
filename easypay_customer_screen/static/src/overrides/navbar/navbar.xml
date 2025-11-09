@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    
+    <t t-name="easypay_customer_screen.NavbarInherit" t-inherit="point_of_sale.Navbar" t-inherit-mode="extension">
+        <xpath expr="//DropdownItem[contains(., 'Close Register')]" position="before">
+            <DropdownItem t-if="pos.config.show_easypay_customer_screen and pos.config._easypay_display_mode === 'slideshow' and pos.config._easypay_slide_image_ids?.length" onSelected="() => this.sendSlideshowToCustomerScreen()">
+                Send Slideshow to Customer Screen
+            </DropdownItem>
+            <DropdownItem t-if="pos.config.show_easypay_customer_screen and pos.config._easypay_display_mode === 'welcome_message'" onSelected="() => this.sendWelcomeMessageToCustomerScreen()">
+                Send Welcome Message to Customer Screen
+            </DropdownItem>
+            <DropdownItem t-if="pos.config.show_easypay_customer_screen and pos.config._easypay_logo_image" onSelected="() => this.sendLogoToCustomerScreen()">
+                Update Logo on Customer Screen
+            </DropdownItem>
+        </xpath>
+    </t>
+    
+</templates> 

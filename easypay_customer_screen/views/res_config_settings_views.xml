@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res_config_settings.view.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='pos_connected_devices_section']" position="before">
+                <block title="Easypay Customer Display Screen"  id="pos_easypay_customer_screen_section">
+                    <setting id="easypay_customer_screen" string="Easypay Customer Display Screen" help="Show checkout to customers through Easypay App display">
+                        <field name="pos_show_easypay_customer_screen"/>
+                    </setting>
+                    <setting string="Logo Image" help="Upload a logo image to display on the customer screen" invisible="not pos_show_easypay_customer_screen">
+                        <field name="pos_easypay_logo_image" class="w-100" widget="image" options="{'size': [150, 150]}" />
+                        <field name="pos_easypay_logo_image_filename" invisible="1" />
+                    </setting>
+                    <setting string="Display Mode" help="Choose what to display on the customer screen" invisible="not pos_show_easypay_customer_screen">
+                        <field name="pos_easypay_display_mode" widget="radio" options="{'horizontal': true}"/>
+                    </setting>
+                    <setting string="Welcome Message" help="Message to display on the customer screen" invisible="not pos_show_easypay_customer_screen or pos_easypay_display_mode != 'welcome_message'">
+                        <field name="pos_easypay_welcome_message" class="w-100" placeholder="Welcome..."/>
+                    </setting>
+                    <setting string="Slideshow Images" help="Personalize your customer screen by adding one or multiple images to create a slideshow" invisible="not pos_show_easypay_customer_screen or pos_easypay_display_mode != 'slideshow'">
+                        <field name="pos_easypay_slide_image_ids" class="w-100" widget="many2many_binary" />
+                    </setting>
+                    <setting string="Thank You Message" help="Message to display on the customer screen after order completion" invisible="not pos_show_easypay_customer_screen">
+                        <field name="pos_easypay_thank_you_message" class="w-100" placeholder="Thank you for your purchase!"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
