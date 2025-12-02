@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 
+
 class PosSession(models.Model):
     _inherit = 'pos.session'
 
@@ -11,6 +12,13 @@ class PosSession(models.Model):
             # Sum the total_total from daily.reconciliation records related to this session
             reconciliations = self.env['daily.reconciliation'].search([('session_id', '=', session.id)])
             session.total_reconciliation_amount = sum(reconciliations.mapped('total_total'))
+
+    @api.model
+    def _load_pos_data_models(self, config_id):
+        """Extend POS data models to include card schemes."""
+        models = super()._load_pos_data_models(config_id)
+        models.append('easypay.card.scheme')
+        return models
 
     def action_show_daily_reconciliation(self):
         self.ensure_one()

@@ -7,6 +7,10 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='use_payment_terminal']" position="after">
                 <field name="easypay_terminalid" invisible="use_payment_terminal != 'easypay'" />
+                <field name="easypay_card_scheme_ids" 
+                       widget="many2many_tags"
+                       invisible="use_payment_terminal != 'easypay'"
+                       options="{'color_field': 'color'}" />
             </xpath>
         </field>
     </record>

@@ -1,3 +1,4 @@
+from . import easypay_card_scheme
 from . import pos_payment_method
 from . import pos_config
 from . import pos_session

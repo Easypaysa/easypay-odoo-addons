@@ -456,7 +456,32 @@ export class PaymentEasypay extends PaymentInterface {
         paymentLine.card_brand = response?.card_scheme?.name?.english + " " + response?.card_scheme?.name?.arabic;
         paymentLine.receipt_url = response?.qr_code;
         // paymentLine.payment_log = response;
+
+        // Remap payment method based on card scheme ID
+        this._remapPaymentMethodByScheme(paymentLine, response);
+
         return true;
+    }
+
+    /**
+     * Remap the payment method on the payment line based on the card scheme ID from the response.
+     * This is used when multiple EasyPay payment methods are configured, each for different card schemes.
+     * @param {Object} paymentLine - The payment line to update
+     * @param {Object} response - The EasyPay transaction response
+     */
+    _remapPaymentMethodByScheme(paymentLine, response) {
+        const schemeId = response?.card_scheme?.id;
+        if (!schemeId) {
+            return; // No scheme ID in response, keep the original payment method
+        }
+
+        // Look up the matching payment method by scheme code
+        const matchingMethod = this.pos.getPaymentMethodBySchemeCode(schemeId);
+        if (matchingMethod && matchingMethod.id !== paymentLine.payment_method_id.id) {
+            // Update the payment line to use the matched payment method
+            paymentLine.payment_method_id = matchingMethod;
+        }
+        // If no matching method found, keep the original (base) payment method
     }
 
     _decode_mada_response(response) {

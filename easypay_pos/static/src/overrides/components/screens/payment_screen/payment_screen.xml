@@ -8,15 +8,13 @@
         <xpath expr="//div[hasclass('overflow-y-auto')]//PaymentScreenPaymentLines" position="attributes">
             <attribute name="getLastTransaction.bind">getLastTransaction</attribute>
         </xpath>
-
-        <!-- <xpath expr="//div[contains(@class, 'pos-receipt-container')]" position="after">
-            <div style="visibility: hidden;height: 0;" class="pos-receipt-container">
-                <div class="pos-receipt">
-                </div>
-            </div>
-        </xpath> -->
     </t>
 
-
+    <!-- Override PaymentScreenMethods to use grouped payment methods -->
+    <t t-name="easypay_pos.PaymentScreenMethods" t-inherit="point_of_sale.PaymentScreenMethods" t-inherit-mode="extension">
+        <xpath expr="//t[@t-foreach='payment_methods_from_config']" position="attributes">
+            <attribute name="t-foreach">displayPaymentMethods</attribute>
+        </xpath>
+    </t>
 
 </templates>

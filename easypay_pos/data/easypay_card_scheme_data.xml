@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Card Schemes for EasyPay Payment Terminal -->
+        <!-- Colors: 1=Red, 2=Orange, 3=Yellow, 4=Light Blue, 5=Purple, 6=Pink, 7=Blue, 8=Dark Blue, 9=Fuchsia, 10=Green, 11=Violet -->
+        <record id="card_scheme_mc" model="easypay.card.scheme">
+            <field name="code">MC</field>
+            <field name="name">Mastercard - credit</field>
+            <field name="color">1</field>
+        </record>
+
+        <record id="card_scheme_dm" model="easypay.card.scheme">
+            <field name="code">DM</field>
+            <field name="name">Maestro</field>
+            <field name="color">7</field>
+        </record>
+
+        <record id="card_scheme_p1" model="easypay.card.scheme">
+            <field name="code">P1</field>
+            <field name="name">Mada</field>
+            <field name="color">10</field>
+        </record>
+
+        <record id="card_scheme_vc" model="easypay.card.scheme">
+            <field name="code">VC</field>
+            <field name="name">Visa</field>
+            <field name="color">4</field>
+        </record>
+
+        <record id="card_scheme_up" model="easypay.card.scheme">
+            <field name="code">UP</field>
+            <field name="name">Union Pay</field>
+            <field name="color">8</field>
+        </record>
+
+        <record id="card_scheme_dc" model="easypay.card.scheme">
+            <field name="code">DC</field>
+            <field name="name">Discover</field>
+            <field name="color">2</field>
+        </record>
+
+        <record id="card_scheme_jc" model="easypay.card.scheme">
+            <field name="code">JC</field>
+            <field name="name">JCB</field>
+            <field name="color">3</field>
+        </record>
+
+        <record id="card_scheme_ax" model="easypay.card.scheme">
+            <field name="code">AX</field>
+            <field name="name">American Express</field>
+            <field name="color">5</field>
+        </record>
+
+        <record id="card_scheme_gn" model="easypay.card.scheme">
+            <field name="code">GN</field>
+            <field name="name">GCCNET</field>
+            <field name="color">9</field>
+        </record>
+    </data>
+</odoo>

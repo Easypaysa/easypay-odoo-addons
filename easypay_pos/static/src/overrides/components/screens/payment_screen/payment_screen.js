@@ -20,6 +20,70 @@ patch(PaymentScreen.prototype, {
             if (!payment_lines[i].is_done() && payment_lines[i].get_payment_status() == "pending")
                 this.currentOrder.remove_paymentline(payment_lines[i]);
         }
+
+        // Build grouped payment methods list for display
+        this._buildGroupedPaymentMethods();
+    },
+
+    /**
+     * Build a list of payment methods with EasyPay methods grouped into one.
+     * This is used to display a single "EasyPay" button when multiple EasyPay methods exist.
+     */
+    _buildGroupedPaymentMethods() {
+        const allMethods = this.payment_methods_from_config;
+        const easypayMethods = allMethods.filter(pm => pm.use_payment_terminal === 'easypay');
+        const nonEasypayMethods = allMethods.filter(pm => pm.use_payment_terminal !== 'easypay');
+
+        if (easypayMethods.length > 1) {
+            // Create a virtual grouped EasyPay payment method
+            // Use the base method's id for proper image handling
+            const baseMethod = easypayMethods[0];
+            this.groupedEasypayMethod = {
+                id: baseMethod.id,  // Use base method's ID for image lookup
+                name: 'EasyPay',
+                use_payment_terminal: 'easypay',
+                is_grouped: true,
+                sequence: baseMethod.sequence,
+                type: baseMethod.type,
+                image: baseMethod.image,
+                // Store the base method for transaction initiation
+                baseMethod: baseMethod,
+            };
+            // Combine non-easypay methods with the grouped method
+            this.groupedPaymentMethods = [...nonEasypayMethods, this.groupedEasypayMethod]
+                .sort((a, b) => a.sequence - b.sequence);
+            this.hasMultipleEasypayMethods = true;
+        } else {
+            this.groupedPaymentMethods = allMethods;
+            this.groupedEasypayMethod = null;
+            this.hasMultipleEasypayMethods = false;
+        }
+    },
+
+    /**
+     * Override paymentMethodImage to handle grouped EasyPay method.
+     * The original Odoo function has a bug using this.paymentMethod instead of looking up by id.
+     */
+    paymentMethodImage(id) {
+        // Find the payment method by ID
+        const pm = this.payment_methods_from_config.find(m => m.id === id) || this.groupedEasypayMethod;
+        
+        if (pm && pm.image) {
+            return `/web/image/pos.payment.method/${id}/image`;
+        } else if (pm && pm.type === "cash") {
+            return "/point_of_sale/static/src/img/money.png";
+        } else if (pm && pm.type === "pay_later") {
+            return "/point_of_sale/static/src/img/pay-later.png";
+        } else {
+            return "/point_of_sale/static/src/img/card-bank.png";
+        }
+    },
+
+    /**
+     * Get display payment methods (with EasyPay grouped if multiple).
+     */
+    get displayPaymentMethods() {
+        return this.groupedPaymentMethods || this.payment_methods_from_config;
     },
 
     onMounted() {
@@ -35,13 +99,38 @@ patch(PaymentScreen.prototype, {
     },
 
     autoEasypay() {
-        if (this.payment_methods_from_config.length == 1) {
-            if (this.payment_methods_from_config[0].use_payment_terminal === 'easypay') {
+        // Check using displayPaymentMethods for grouped logic
+        const displayMethods = this.displayPaymentMethods;
+        if (displayMethods.length == 1) {
+            const method = displayMethods[0];
+            if (method.use_payment_terminal === 'easypay') {
                 if (this.currentOrder.get_paymentlines().length > 0) {
-                    this.sendPaymentRequest(this.currentOrder.get_paymentlines()[0])
+                    this.sendPaymentRequest(this.currentOrder.get_paymentlines()[0]);
                 }
             }
         }
+    },
+
+    /**
+     * Override addNewPaymentLine to handle grouped EasyPay method.
+     */
+    addNewPaymentLine(paymentMethod) {
+        // If this is the grouped EasyPay method, use the base method
+        if (paymentMethod.is_grouped && paymentMethod.baseMethod) {
+            return super.addNewPaymentLine(paymentMethod.baseMethod);
+        }
+        return super.addNewPaymentLine(paymentMethod);
+    },
+
+    /**
+     * Check if a payment method should be hidden (individual EasyPay when grouped).
+     */
+    isPaymentMethodHidden(paymentMethod) {
+        if (!this.hasMultipleEasypayMethods) {
+            return false;
+        }
+        // Hide individual EasyPay methods when we have multiple (they're grouped)
+        return paymentMethod.use_payment_terminal === 'easypay' && !paymentMethod.is_grouped;
     },
 
     async getLastTransaction(line) {
