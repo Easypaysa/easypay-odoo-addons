@@ -14,9 +14,9 @@ class PosSession(models.Model):
             session.total_reconciliation_amount = sum(reconciliations.mapped('total_total'))
 
     @api.model
-    def _load_pos_data_models(self, config_id):
+    def _load_pos_data_models(self, config):
         """Extend POS data models to include card schemes."""
-        models = super()._load_pos_data_models(config_id)
+        models = super()._load_pos_data_models(config)
         models.append('easypay.card.scheme')
         return models
 

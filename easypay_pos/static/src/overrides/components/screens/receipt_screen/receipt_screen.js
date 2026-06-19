@@ -5,10 +5,10 @@ import {patch} from "@web/core/utils/patch";
 import {OrderReceipt} from "@point_of_sale/app/screens/receipt_screen/receipt/order_receipt";
 import {useService} from "@web/core/utils/hooks";
 import {renderToString} from "@web/core/utils/render";
-import { useErrorHandlers, useTrackedAsync } from "@point_of_sale/app/utils/hooks";
+import { useErrorHandlers, useTrackedAsync } from "@point_of_sale/app/hooks/hooks";
 
 import {renderToElement} from "@web/core/utils/render";
-import {htmlToCanvas} from "@point_of_sale/app/printer/render_service";
+import {htmlToCanvas} from "@point_of_sale/app/services/render_service";
 import { useRef, useState, Component, onMounted } from "@odoo/owl";
 import { toCanvas } from "@point_of_sale/app/utils/html-to-image";
 
@@ -25,7 +25,7 @@ patch(ReceiptScreen.prototype, {
     },
 
     get_is_openCashDrawer() {
-        return this.currentOrder.is_paid_with_cash() || this.currentOrder.get_change();
+        return this.currentOrder.isPaidWithCash() || this.currentOrder.change;
     },
 
     // async printReceipt() {

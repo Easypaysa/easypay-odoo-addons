@@ -2,11 +2,11 @@
 
 import { _t } from "@web/core/l10n/translation";
 import { patch } from "@web/core/utils/patch";
-import { ClosePosPopup } from "@point_of_sale/app/navbar/closing_popup/closing_popup";
+import { ClosePosPopup } from "@point_of_sale/app/components/popups/closing_popup/closing_popup";
 import { useService } from "@web/core/utils/hooks";
 import { useState, onWillStart } from "@odoo/owl";
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
-import { ask } from "@point_of_sale/app/store/make_awaitable_dialog";
+import { ask } from "@point_of_sale/app/utils/make_awaitable_dialog";
 
 patch(ClosePosPopup.prototype, {
     setup() {

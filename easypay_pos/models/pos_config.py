@@ -26,6 +26,12 @@ class PosConfig(models.Model):
         for config in self:
             config.is_easypay = bool(config.payment_method_ids.filtered(lambda method: method.use_payment_terminal == 'easypay'))
 
+    @api.depends('easy_connection_type', 'easy_default_ip', 'easy_force_done',
+                 'easy_auto_validate', 'enable_auto_print_payment_transaction',
+                 'print_order_receipt', 'mandatory_reconciliation')
+    def _compute_local_data_integrity(self):
+        return super()._compute_local_data_integrity()
+
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 

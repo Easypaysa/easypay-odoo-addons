@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
     'name': 'POS Easypay tap & pay',
-    'version': '18.0.6.0.0',
+    'version': '19.0.6.0.0',
     'category': 'Sales/Point of Sale',
     'sequence': 6,
     'summary': 'Integrate your POS with Easypay Soft POS',

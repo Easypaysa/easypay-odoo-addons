@@ -20,8 +20,8 @@ class PosPaymentMethod(models.Model):
         return super()._get_payment_terminal_selection() + [('easypay', 'EASYPAY')]
 
     @api.model
-    def _load_pos_data_fields(self, config_id):
-        fields = super()._load_pos_data_fields(config_id)
+    def _load_pos_data_fields(self, config):
+        fields = super()._load_pos_data_fields(config)
         fields.extend(['easypay_terminalid', 'easypay_card_scheme_ids'])
         return fields
 

@@ -4,10 +4,12 @@ import {PaymentScreen} from "@point_of_sale/app/screens/payment_screen/payment_s
 import {patch} from "@web/core/utils/patch";
 import {onMounted} from "@odoo/owl";
 import {useService} from "@web/core/utils/hooks";
-import { ask } from "@point_of_sale/app/store/make_awaitable_dialog";
+import { ask } from "@point_of_sale/app/utils/make_awaitable_dialog";
 import {_t} from "@web/core/l10n/translation";
 import { floatIsZero } from "@web/core/utils/numbers";
 import {OrderReceipt} from "@point_of_sale/app/screens/receipt_screen/receipt/order_receipt";
+import {renderToElement} from "@web/core/utils/render";
+import {htmlToCanvas} from "@point_of_sale/app/services/render_service";
 
 patch(PaymentScreen.prototype, {
     setup() {
@@ -17,8 +19,8 @@ patch(PaymentScreen.prototype, {
         this.renderer = useService("renderer");
         var payment_lines = this.paymentLines;
         for (var i = 0; i < payment_lines.length; i++) {
-            if (!payment_lines[i].is_done() && payment_lines[i].get_payment_status() == "pending")
-                this.currentOrder.remove_paymentline(payment_lines[i]);
+            if (!payment_lines[i].isDone() && payment_lines[i].getPaymentStatus() == "pending")
+                this.currentOrder.removePaymentline(payment_lines[i]);
         }
 
         // Build grouped payment methods list for display
@@ -88,10 +90,10 @@ patch(PaymentScreen.prototype, {
 
     onMounted() {
         const pendingPaymentLine = this.currentOrder.payment_ids.find(
-            paymentLine => paymentLine.payment_method_id.use_payment_terminal === 'easypay' && (!paymentLine.is_done() && paymentLine.get_payment_status() !== 'pending')
+            paymentLine => paymentLine.payment_method_id.use_payment_terminal === 'easypay' && (!paymentLine.isDone() && paymentLine.getPaymentStatus() !== 'pending')
         );
         if (pendingPaymentLine) {
-            pendingPaymentLine.set_payment_status('force_done');
+            pendingPaymentLine.setPaymentStatus('force_done');
         } else {
             super.onMounted();
             this.autoEasypay();
@@ -104,8 +106,8 @@ patch(PaymentScreen.prototype, {
         if (displayMethods.length == 1) {
             const method = displayMethods[0];
             if (method.use_payment_terminal === 'easypay') {
-                if (this.currentOrder.get_paymentlines().length > 0) {
-                    this.sendPaymentRequest(this.currentOrder.get_paymentlines()[0]);
+                if (this.currentOrder.payment_ids.length > 0) {
+                    this.sendPaymentRequest(this.currentOrder.payment_ids[0]);
                 }
             }
         }
@@ -158,8 +160,8 @@ patch(PaymentScreen.prototype, {
         const currentOrder = line.pos_order_id;
         if (
             isPaymentSuccessful &&
-            currentOrder.is_paid() &&
-            floatIsZero(currentOrder.get_due(), currency.decimal_places) &&
+            currentOrder.isPaid() &&
+            floatIsZero(currentOrder.remainingDue, currency.decimal_places) &&
             config.auto_validate_terminal_payment
         ) {
             this.validateOrder(false);
@@ -205,9 +207,7 @@ patch(PaymentScreen.prototype, {
     },
 
     get totalDueText() {
-        return this.pos.format_currency(
-            this.currentOrder.get_total_with_tax() + this.currentOrder.get_rounding_applied()
-        );
+        return this.env.utils.formatCurrency(this.currentOrder.totalDue);
     },
 
     async _CustomerDisplayReceipt() {
@@ -215,14 +215,14 @@ patch(PaymentScreen.prototype, {
         // console.log("deviceModel", self.pos.deviceModel);
         if (window.CustomerDisplay || (self.pos.is_DeviceName && self.pos.is_connected)) {
             if (self.pos.deviceModel === 'Z100') {
-                const renderedReceipt = renderToString('easypay_pos.EasyCustomerDisplay', {
+                const renderedReceipt = renderToElement('easypay_pos.EasyCustomerDisplay', {
                     _receipt: {
                         lineCount: 2,
                         line1: "الرجاء تمرير البطاقة للدفع",
                         line2: self.totalDueText,
                     }
                 });
-                const receipt_image_64 = await self.htmlToImg(renderedReceipt);
+                const receipt_image_64 = await self.getReceiptImage(renderedReceipt);
                 // console.log(receipt_image_64);
                 var CustomerDisplayMessage = JSON.stringify({
                     'data': receipt_image_64, 'cutter': true,
@@ -235,14 +235,14 @@ patch(PaymentScreen.prototype, {
                 }
                 return
             } else if (self.pos.deviceModel === 'I22T01') {
-                const renderedReceipt = renderToString('easypay_pos.EasyCustomerDisplayimin', {
+                const renderedReceipt = renderToElement('easypay_pos.EasyCustomerDisplayimin', {
                     _receipt: {
                         lineCount: 2,
                         line1: "الرجاء تمرير البطاقة للدفع",
                         line2: self.totalDueText,
                     }
                 });
-                const receipt_image_64 = await self.htmlToImg(renderedReceipt);
+                const receipt_image_64 = await self.getReceiptImage(renderedReceipt);
                 // console.log(receipt_image_64);
                 var CustomerDisplayMessage = JSON.stringify({
                     'data': receipt_image_64,
@@ -263,25 +263,23 @@ patch(PaymentScreen.prototype, {
     },
 
 
-    htmlToImg(receipt) {
-        $('.pos-receipt-print').html(receipt);
-        if (this.pos.deviceModel === 'Z100') {
-            this.receipt = $('.pos-receipt-print>.zcsdisplayimage');
-        } else if (this.pos.deviceModel === 'I22T01') {
-            this.receipt = $('.pos-receipt-print>.imindisplayimage');
+    async getReceiptImage(receipt) {
+        this.receiptQueue = [];
+        if (receipt) {
+            this.receiptQueue.push(receipt);
         }
-        // Odoo RTL support automatically flip left into right but html2canvas
-        // won't work as expected if the receipt is aligned to the right of the
-        // screen so we need to flip it back.
-        this.receipt.parent().css({left: 0, right: 'auto'});
-        return html2canvas(this.receipt[0], {
-            height: Math.ceil(this.receipt.height()),
-            width: Math.ceil(this.receipt.width()),
-            scale: 1,
-        }).then(canvas => {
-            $('.pos-receipt-print').empty();
-            return canvas.toDataURL('image/jpeg').replace('data:image/jpeg;base64,', '');
-        });
+        let image;
+        while (this.receiptQueue.length > 0) {
+            receipt = this.receiptQueue.shift();
+            image = this.processCanvas(
+                await htmlToCanvas(receipt, {addClass: "pos-receipt-print"})
+            );
+        }
+        return image;
+    },
+
+    processCanvas(canvas) {
+        return canvas.toDataURL("image/jpeg").replace("data:image/jpeg;base64,", "");
     },
 });
 

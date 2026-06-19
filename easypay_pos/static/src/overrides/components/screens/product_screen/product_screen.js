@@ -2,7 +2,7 @@
 import {ProductScreen} from "@point_of_sale/app/screens/product_screen/product_screen";
 import {patch} from "@web/core/utils/patch";
 import {renderToElement} from "@web/core/utils/render";
-import {htmlToCanvas} from "@point_of_sale/app/printer/render_service";
+import {htmlToCanvas} from "@point_of_sale/app/services/render_service";
 
 
 patch(ProductScreen.prototype, {

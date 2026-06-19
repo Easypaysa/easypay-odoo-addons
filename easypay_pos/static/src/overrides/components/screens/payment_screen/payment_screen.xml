@@ -5,7 +5,7 @@
         <xpath expr="//div[hasclass('payment-summary')]//PaymentScreenPaymentLines" position="attributes">
             <attribute name="getLastTransaction.bind">getLastTransaction</attribute>
         </xpath>
-        <xpath expr="//div[hasclass('overflow-y-auto')]//PaymentScreenPaymentLines" position="attributes">
+        <xpath expr="//t[@t-if='ui.isSmall']//PaymentScreenPaymentLines" position="attributes">
             <attribute name="getLastTransaction.bind">getLastTransaction</attribute>
         </xpath>
     </t>

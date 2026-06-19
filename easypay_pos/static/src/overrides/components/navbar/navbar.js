@@ -1,17 +1,15 @@
 /** @odoo-module */
 
-import { Navbar } from "@point_of_sale/app/navbar/navbar";
-import { usePos } from "@point_of_sale/app/store/pos_hook";
+import { Navbar } from "@point_of_sale/app/components/navbar/navbar";
+import { usePos } from "@point_of_sale/app/hooks/pos_hook";
 import { patch } from "@web/core/utils/patch";
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { _t } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
-import { ask } from "@point_of_sale/app/store/make_awaitable_dialog";
+import { ask } from "@point_of_sale/app/utils/make_awaitable_dialog";
 import { Component, onMounted, useState } from "@odoo/owl";
 import { renderToElement } from "@web/core/utils/render";
-import { htmlToCanvas } from "@point_of_sale/app/printer/render_service";
-import { PrintReconciliationReceiptScreen } from "../../../js/receipt_screen/print_reconciliation_receipt_screen";
-// import { PrintReconciliationReceiptScreen } from "@easypay_pos/js/receipt_screen/print_reconciliation_receipt_screen";
+import { htmlToCanvas } from "@point_of_sale/app/services/render_service";
 
 patch(Navbar.prototype, {
     setup() {
@@ -23,7 +21,7 @@ patch(Navbar.prototype, {
         this.printer = useService("printer");
         this.renderer = useService("renderer");
         this.running = 0;
-        this.state = useState({ portInputValue: '5000', ipInputValue: this.pos.config.easy_default_ip });
+        this.state = useState({ portInputValue: '5000', ipInputValue: this.pos.config.easy_default_ip || 'localhost' });
 
     },
 

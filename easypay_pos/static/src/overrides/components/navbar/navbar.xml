@@ -88,13 +88,13 @@
                                            <div>
                                                <label class="np-fs-5" for=":r0:" style="font-weight: bold;">Ip Address</label>
                                            </div>
-                                           <input t-model="state.ipInputValue" class="np-text-center np-fs-5 undefined" type="text" value="localhost"/>
+                                           <input t-model="state.ipInputValue" t-on-keydown="(ev) => ev.stopPropagation()" class="np-text-center np-fs-5" type="text"/>
                                         </div>
                                        <div style="padding-left: 5px;display: none;">
                                            <div>
                                                <label class="np-fs-5" for=":r1:" style="font-weight: bold;">Port</label>
                                            </div>
-                                           <input t-model="state.portInputValue" class="np-text-center np-fs-4 undefined" type="text" value="5000"/>
+                                           <input t-model="state.portInputValue" t-on-keydown="(ev) => ev.stopPropagation()" class="np-text-center np-fs-4 undefined" type="text" value="5000"/>
                                        </div>
                                    </div>
                                    <div class="np-error-message "></div>

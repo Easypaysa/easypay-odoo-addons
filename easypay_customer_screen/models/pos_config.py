@@ -67,19 +67,23 @@ class PosConfig(models.Model):
         self.ensure_one()
         return self.easypay_thank_you_message or "Thank you for your purchase!"
     
-    def _load_pos_data(self, data):
-        result = super()._load_pos_data(data)
-        if result['data'] and result['data'][0]['show_easypay_customer_screen']:
-            config_id = result['data'][0]['id']
-            config = self.browse(config_id)
-            # Load display mode, welcome message, and thank you message
-            result['data'][0]['_easypay_display_mode'] = config.easypay_display_mode
-            result['data'][0]['_easypay_welcome_message'] = config._get_easypay_welcome_message()
-            result['data'][0]['_easypay_thank_you_message'] = config._get_easypay_thank_you_message()
-            # Load slideshow images if display mode is slideshow
+    @api.depends('show_easypay_customer_screen', 'easypay_display_mode',
+                 'easypay_welcome_message', 'easypay_thank_you_message',
+                 'easypay_logo_image', 'easypay_logo_image_filename',
+                 'easypay_slide_image_ids')
+    def _compute_local_data_integrity(self):
+        return super()._compute_local_data_integrity()
+
+    @api.model
+    def _load_pos_data_read(self, records, config):
+        read_records = super()._load_pos_data_read(records, config)
+        if read_records and config.show_easypay_customer_screen:
+            record = read_records[0]
+            record['_easypay_display_mode'] = config.easypay_display_mode
+            record['_easypay_welcome_message'] = config._get_easypay_welcome_message()
+            record['_easypay_thank_you_message'] = config._get_easypay_thank_you_message()
             if config.easypay_display_mode == 'slideshow' and config.easypay_slide_image_ids:
-                result['data'][0]['_easypay_slide_image_ids'] = config._get_easypay_slide_images()
-            # Load logo if configured
+                record['_easypay_slide_image_ids'] = config._get_easypay_slide_images()
             if config.easypay_logo_image:
-                result['data'][0]['_easypay_logo_image'] = config._get_easypay_logo_image()
-        return result
+                record['_easypay_logo_image'] = config._get_easypay_logo_image()
+        return read_records

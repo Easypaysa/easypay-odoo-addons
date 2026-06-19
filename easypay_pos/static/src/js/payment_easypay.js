@@ -1,11 +1,11 @@
 /** @odoo-module */
 
 import {_t} from "@web/core/l10n/translation";
-import {PaymentInterface} from "@point_of_sale/app/payment/payment_interface";
+import {PaymentInterface} from "@point_of_sale/app/utils/payment/payment_interface";
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import {renderToElement} from "@web/core/utils/render";
-import {htmlToCanvas} from "@point_of_sale/app/printer/render_service";
-import { ask } from "@point_of_sale/app/store/make_awaitable_dialog";
+import {htmlToCanvas} from "@point_of_sale/app/services/render_service";
+import { ask } from "@point_of_sale/app/utils/make_awaitable_dialog";
 
 
 const REQUEST_TIMEOUT = 65000;
@@ -60,16 +60,16 @@ export class PaymentEasypay extends PaymentInterface {
      * @param { string } uuid
      * @returns Promise
      */
-    async send_payment_request(uuid) {
-        await super.send_payment_request(...arguments);
-        const paymentLine = this.pos.get_order()?.get_selected_paymentline();
-        const order = this.pos?.get_order();
+    async sendPaymentRequest(uuid) {
+        await super.sendPaymentRequest(...arguments);
+        const paymentLine = this.pos.getOrder()?.getSelectedPaymentline();
+        const order = this.pos?.getOrder();
         const retry = this._retryCountUtility(order.uuid)
         let transactionId = order.name.replace(" ", "").replaceAll("-", "").toUpperCase();
         if (retry > 0) {
            transactionId = transactionId.concat("retry", retry);
         }
-        const transactionAmount = paymentLine.amount * 100;
+        const transactionAmount = Math.round(paymentLine.amount * 100);
         const timeStamp = Math.floor(Date.now() / 1000);
 
         // Preparing Unique Random Reference Id
@@ -84,11 +84,11 @@ export class PaymentEasypay extends PaymentInterface {
         } else {
             const response = await this.checkEasypayStatus();
             if (!response) {
-                paymentLine.set_payment_status('force_done');
+                paymentLine.setPaymentStatus('force_done');
                 this._incrementRetry(order.uuid);
                 return false
             }
-            paymentLine.set_payment_status('waitingCard');
+            paymentLine.setPaymentStatus('waitingCard');
             const pollResponse = await this.pollPayment(transactionAmount, transactionId, referenceId, "PURCHASE");
             if (pollResponse) {
                 const retry_remove = true
@@ -102,25 +102,25 @@ export class PaymentEasypay extends PaymentInterface {
     }
 
     async get_last_transaction_request(uuid) {
-        const paymentLine = this.pos.get_order()?.get_selected_paymentline();
-        const order = this.pos?.get_order();
+        const paymentLine = this.pos.getOrder()?.getSelectedPaymentline();
+        const order = this.pos?.getOrder();
         const retry = this._retryCountUtility(order.uuid)
         let transactionId = order.name.replace(" ", "").replaceAll("-", "").toUpperCase();
         if (retry > 0) {
            transactionId = transactionId.concat("retry", retry);
         }
-        const transactionAmount = paymentLine.amount * 100;
+        const transactionAmount = Math.round(paymentLine.amount * 100);
         if (window.inAppPurchase) {
             this.pos.easyChannel = true;
             return this._get_last_transaction();
         } else {
             const response = await this.checkEasypayStatus();
             if (!response) {
-                paymentLine.set_payment_status('force_done');
+                paymentLine.setPaymentStatus('force_done');
                 this._incrementRetry(order.uuid);
                 return false
             }
-            paymentLine.set_payment_status('waitingCard');
+            paymentLine.setPaymentStatus('waitingCard');
             const pollResponse = await this.pollPayment(transactionAmount, transactionId, "", "GetLastTransaction");
             if (pollResponse) {
                 const retry_remove = true
@@ -134,8 +134,8 @@ export class PaymentEasypay extends PaymentInterface {
     }
 
     async _android_purchase(amount, transactionId, referenceId) {
-        const paymentLine = this.pos.get_order()?.get_selected_paymentline();
-        const order = this.pos?.get_order();
+        const paymentLine = this.pos.getOrder()?.getSelectedPaymentline();
+        const order = this.pos?.getOrder();
         // const args = [{
         //     method: "purchase",
         //     customerReferenceNumber: transactionId,
@@ -143,28 +143,28 @@ export class PaymentEasypay extends PaymentInterface {
         // }];
         // this.pos.paymentProcessing = true
         // // await this._CustomerDisplayPayment()
-        // paymentLine.set_payment_status('waitingCard');
+        // paymentLine.setPaymentStatus('waitingCard');
         // const pollResponse = await window.inAppPurchase.callHandler('inAppEasypay', ...args);
         const args = [{
             method: "purchase",
             transactionId: transactionId,
-            transactionAmount: Math.floor(amount)
+            transactionAmount: Math.round(amount)
         }];
         this.pos.paymentProcessing = true
         // await this._CustomerDisplayPayment()
-        paymentLine.set_payment_status('waitingCard');
+        paymentLine.setPaymentStatus('waitingCard');
         const pollResponse = await window.inAppPurchase.callHandler('inAppPurchase', ...args);
         this.pos.paymentProcessing = false
         this._CustomerDisplayReceipt();
         if (pollResponse === "false" || pollResponse === null) {
-            paymentLine.set_payment_status('force_done');
+            paymentLine.setPaymentStatus('force_done');
             this._incrementRetry(order.uuid);
             return false;
         }
         this.pos.paymentDone = true
         var result = JSON.parse(pollResponse);
         this.pos.last_reuslt = result.qr_code
-        paymentLine.set_payment_status('done');
+        paymentLine.setPaymentStatus('done');
         await this._decode_response(result);
         const retry_remove = true
         this._retryCountUtility(order.uuid, retry_remove)
@@ -172,19 +172,19 @@ export class PaymentEasypay extends PaymentInterface {
     }
 
     async _get_last_transaction() {
-        const paymentLine = this.pos.get_order()?.get_selected_paymentline();
-        const order = this.pos?.get_order();
+        const paymentLine = this.pos.getOrder()?.getSelectedPaymentline();
+        const order = this.pos?.getOrder();
         const args = [{
             method: "getLastTransaction",
         }];
         this.pos.paymentProcessing = true
         // await this._CustomerDisplayPayment()
-        paymentLine.set_payment_status('waitingCard');
+        paymentLine.setPaymentStatus('waitingCard');
         const pollResponse = await window.inAppPurchase.callHandler('inAppEasypay', ...args);
         this.pos.paymentProcessing = false
         this._CustomerDisplayReceipt();
         if (pollResponse === "false" || pollResponse === null) {
-            paymentLine.set_payment_status('force_done');
+            paymentLine.setPaymentStatus('force_done');
             this._incrementRetry(order.uuid);
             return false;
         }
@@ -192,7 +192,7 @@ export class PaymentEasypay extends PaymentInterface {
         var result = JSON.parse(pollResponse);
         paymentLine.amount = parseFloat(result.amount_authorized.value)
         this.pos.last_reuslt = result.qr_code
-        paymentLine.set_payment_status('done');
+        paymentLine.setPaymentStatus('done');
         await this._decode_response(result);
         const retry_remove = true
         this._retryCountUtility(order.uuid, retry_remove)
@@ -201,18 +201,18 @@ export class PaymentEasypay extends PaymentInterface {
 
     sendTransactionToMada(amount, transactionId, referenceId) {
         var self = this;
-        const paymentLine = this.pos.get_order()?.get_selected_paymentline();
-        const order = this.pos?.get_order();
+        const paymentLine = this.pos.getOrder()?.getSelectedPaymentline();
+        const order = this.pos?.getOrder();
         const data = JSON.stringify(
             {
                 method: "purchase",
                 customerReferenceNumber: transactionId,
-                amount: Math.floor(amount)
+                amount: Math.round(amount)
             }
         )
         this.pos.paymentProcessing = true
         // await this._CustomerDisplayPayment()
-        paymentLine.set_payment_status('waitingCard');
+        paymentLine.setPaymentStatus('waitingCard');
         return new Promise((resolve, reject) => {
             var currentCallbackId = callbackId++;
                 callbackMap[currentCallbackId] = resolve;
@@ -222,13 +222,13 @@ export class PaymentEasypay extends PaymentInterface {
             this.pos.paymentProcessing = false
             this._CustomerDisplayReceipt();
             if (response === "false" || response === null) {
-                paymentLine.set_payment_status('force_done');
+                paymentLine.setPaymentStatus('force_done');
                 this._incrementRetry(order.uuid);
                 return false;
             }
             this.pos.paymentDone = true
             var result = JSON.parse(response);
-            paymentLine.set_payment_status('done');
+            paymentLine.setPaymentStatus('done');
             await this._decode_response(result);
             const retry_remove = true
             this._retryCountUtility(order.uuid, retry_remove)
@@ -239,10 +239,10 @@ export class PaymentEasypay extends PaymentInterface {
     async fromEasyPay(transaction) {
         this.pos.paymentProcessing = false
         this._CustomerDisplayReceipt();
-        const paymentLine = this.pos.get_order()?.get_selected_paymentline();
-        const order = this.pos?.get_order();
+        const paymentLine = this.pos.getOrder()?.getSelectedPaymentline();
+        const order = this.pos?.getOrder();
         if (transaction === "false") {
-            paymentLine.set_payment_status('force_done');
+            paymentLine.setPaymentStatus('force_done');
             this._incrementRetry(order.uuid);
             return rejectPromise();
         }
@@ -258,7 +258,7 @@ export class PaymentEasypay extends PaymentInterface {
         // console.log('result',result)
         // if (result.status && parseInt(result.status) == 200) {
 
-        paymentLine.set_payment_status('done');
+        paymentLine.setPaymentStatus('done');
         await this._decode_response(result);
         const retry_remove = true
         this._retryCountUtility(order.uuid, retry_remove)
@@ -273,10 +273,10 @@ export class PaymentEasypay extends PaymentInterface {
      * @param { string } uuid
      * @returns Promise
      */
-    async send_payment_cancel(order, uuid) {
-        await super.send_payment_cancel(...arguments);
-        const paymentLine = this.pos.get_order()?.get_selected_paymentline();
-        paymentLine.set_payment_status('retry');
+    async sendPaymentCancel(order, uuid) {
+        await super.sendPaymentCancel(...arguments);
+        const paymentLine = this.pos.getOrder()?.getSelectedPaymentline();
+        paymentLine.setPaymentStatus('retry');
         this._incrementRetry(order.uuid);
         clearTimeout(this.pollTimeout);
         if (this.pos.socket && this.pos.socket.readyState === 1) {
@@ -297,7 +297,7 @@ export class PaymentEasypay extends PaymentInterface {
     async pollPayment(amount, transactionId, referenceId, method) {
         let self = this;
         // const fetchPaymentStatus = async (resolve, reject) => {
-        const paymentLine = this.pos.get_order()?.get_selected_paymentline();
+        const paymentLine = this.pos.getOrder()?.getSelectedPaymentline();
         if (!paymentLine || paymentLine.payment_status == 'retry') {
             return false;
         }
@@ -310,7 +310,7 @@ export class PaymentEasypay extends PaymentInterface {
                     }
                 } else {
                     data = {
-                        "amount": Math.floor(amount),
+                        "amount": Math.round(amount),
                         "customerReferenceNumber": transactionId,
                         "method": method
                     }
@@ -424,9 +424,9 @@ export class PaymentEasypay extends PaymentInterface {
 
             }
         } catch (error) {
-            const order = this.pos.get_order();
+            const order = this.pos.getOrder();
             this._incrementRetry(order.uuid);
-            paymentLine.set_payment_status('force_done');
+            paymentLine.setPaymentStatus('force_done');
             this._showError(error, 'EasypayFetchPaymentStatus');
             return false;
         }
@@ -441,7 +441,7 @@ export class PaymentEasypay extends PaymentInterface {
     }
 
     _decode_response(response) {
-        const paymentLine = this.pos.get_order()?.get_selected_paymentline();
+        const paymentLine = this.pos.getOrder()?.getSelectedPaymentline();
         // this.pos.last_reuslt = response.qr_code
         paymentLine.transaction_id = response?.id;
         // paymentLine.uuid = response?.transaction_uuid;
@@ -485,7 +485,7 @@ export class PaymentEasypay extends PaymentInterface {
     }
 
     _decode_mada_response(response) {
-        const paymentLine = this.pos.get_order()?.get_selected_paymentline();
+        const paymentLine = this.pos.getOrder()?.getSelectedPaymentline();
         paymentLine.udid = "";
         paymentLine.retrieval_reference_number = response?.RRN;
         paymentLine.pan = response?.PAN;
@@ -540,7 +540,7 @@ export class PaymentEasypay extends PaymentInterface {
     }
 
     get totalDueText() {
-        return this.env.utils.formatCurrency(this.pos.get_order()?.get_total_with_tax());
+        return this.env.utils.formatCurrency(this.pos.getOrder()?.priceIncl);
     }
 
 

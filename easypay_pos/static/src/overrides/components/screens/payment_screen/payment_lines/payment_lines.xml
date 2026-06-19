@@ -55,6 +55,27 @@
       </t>
     </xpath>
 
+    <!-- Replace the waiting-for-card section so Force done / Cancel use the consistent button row -->
+    <xpath expr="//t[@t-elif=&quot;line.payment_status == 'waitingCard'&quot;]" position="replace">
+      <t t-elif="line.payment_status == 'waitingCard'">
+        <div class="electronic_status">
+          <t t-if="this.props.isRefundOrder">
+            Refund in process
+          </t>
+          <t t-else="">
+            Waiting for card
+          </t>
+        </div>
+        <div class="d-flex gap-2 flex-wrap">
+          <div t-if="!this.props.isRefundOrder" class="button send_payment_cancel"
+               title="Cancel Payment Request"
+               t-on-click="() => this.props.sendPaymentCancel(line)">
+            Cancel
+          </div>
+        </div>
+      </t>
+    </xpath>
+
     <!-- Replace the pending section to add Get Last Transaction button -->
     <xpath expr="//t[@t-if=&quot;line.payment_status == 'pending'&quot;]" position="replace">
       <t t-if="line.payment_status == 'pending'">

@@ -20,10 +20,10 @@ class EasypayCardScheme(models.Model):
     ]
 
     @api.model
-    def _load_pos_data_domain(self, data):
+    def _load_pos_data_domain(self, data, config):
         return []
 
     @api.model
-    def _load_pos_data_fields(self, config_id):
+    def _load_pos_data_fields(self, config):
         return ['id', 'code', 'name']
 
